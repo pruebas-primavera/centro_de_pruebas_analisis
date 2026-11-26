@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "version": "V-2.39",
+  "release": "V-2.39-2bee9460c3e9",
+  "pages": {
+    "index": "index.pa2.18.94eae5f7e26c.html",
+    "masivos": "masivos.pa2.18.94eae5f7e26c.html",
+    "repeat60": "repeat60.pa2.18.94eae5f7e26c.html",
+    "operacion-diaria": "operacion-diaria.pa2.18.94eae5f7e26c.html"
+  },
+  "localDevelopment": true,
+  "unlockedModules": [
+    "operacion-diaria",
+    "atenuados"
+  ]
+}

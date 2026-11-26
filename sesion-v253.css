@@ -1,0 +1,25 @@
+/* V-2.53 · Ventana de contraseña (Bienvenida) y pantalla de acceso / avisos (Planta Externa). Mismo aspecto que Atenuados. */
+#ps-gate,#pe253-gate{position:fixed;inset:0;z-index:2147482000;display:grid;place-items:center;background:rgba(255,247,239,.94);padding:16px}
+#pe253-gate{background:#fff7ef}
+#ps-gate[hidden]{display:none}
+.ps-card{width:min(420px,100%);background:#fffaf6;border:1px solid #efcdb8;border-radius:14px;padding:26px 26px 18px;box-shadow:0 12px 32px #5935131f;display:flex;flex-direction:column;gap:10px;font-family:Arial,Helvetica,sans-serif;text-align:left}
+.ps-card h2{margin:0;font-size:20px;color:#101b43;border-left:5px solid #ff690b;padding-left:10px}
+.ps-card p{margin:0;font-size:14px;color:#41566f;line-height:1.45}
+.ps-card label{font-size:12px;font-weight:bold;color:#101b43;margin-top:6px}
+.ps-card input{height:42px;border:1px solid #e7c9b5;border-radius:8px;padding:0 12px;font:16px Consolas,monospace;letter-spacing:.5px;color:#101b43;background:#fff}
+.ps-card input[hidden],.ps-card button[hidden]{display:none}
+.ps-card input:focus-visible,.ps-card button:focus-visible,.ps-card a:focus-visible{outline:2px solid #ff690b;outline-offset:2px}
+.ps-card button{height:42px;border:0;border-radius:8px;background:#ff690b;color:#fff;font-weight:bold;font-size:14px;cursor:pointer;min-width:0}
+.ps-card button:disabled{background:#f2b58f;cursor:default}
+.ps-card .ps-link{height:auto;background:none;color:#c64b00;font-weight:normal;font-size:12px;text-decoration:underline;align-self:center;padding:4px}
+#ps-msg,#pe253-msg{min-height:18px;color:#b42318;font-size:13px}
+#ps-msg.ok,#pe253-msg.ok{color:#41566f}
+.ps-bar{height:6px;background:#f3e2d6;border-radius:3px;overflow:hidden}
+.ps-bar[hidden]{display:none}
+.ps-bar span{display:block;height:100%;width:0;background:#ff690b;transition:width .2s}
+.ps-back{font-size:12px;color:#c64b00;align-self:center;margin-top:4px}
+.pe253-locked body>*:not(#pe253-gate):not(dialog){visibility:hidden}
+#pe253-banner{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:2147481000;display:flex;align-items:center;gap:14px;background:#101b43;color:#fff;border-radius:10px;padding:10px 14px;box-shadow:0 8px 24px #0005;font:14px Arial,Helvetica,sans-serif}
+#pe253-banner[hidden]{display:none}
+#pe253-banner p{margin:0}
+#pe253-banner button{border:0;border-radius:7px;background:#ff690b;color:#fff;font-weight:bold;padding:7px 12px;cursor:pointer;white-space:nowrap;min-width:0}
