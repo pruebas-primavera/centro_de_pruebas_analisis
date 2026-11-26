@@ -1,0 +1,17 @@
+/* Detalle de folios exclusivo de Planta Externa. Valores visuales de Soportes. */
+.pe397-popup .leaflet-popup-content-wrapper,.pe397-popup .leaflet-popup-tip{background:#f9fcff;color:#132b3e}
+.pe397-popup .leaflet-popup-content-wrapper{border-top:0;border-radius:12px;box-shadow:0 3px 14px #0006;padding:1px}
+.pe397-popup .leaflet-popup-content{width:320px!important;max-width:calc(100vw - 70px);margin:13px 19px;font:12px/1.4 Arial,sans-serif}
+.pe397-popup .v57-popup{min-width:0;max-height:none;overflow:visible;padding:0;font:12px/1.4 Arial,sans-serif}
+.pe397-popup .v57-popup>strong{font:700 12px/1.4 Arial,sans-serif;color:#132b3e;margin:0 16px 7px 0}
+.pe397-popup details.pe397-folio{margin:7px 0;border:1px solid #ddd;border-radius:5px;padding:5px;font:12px/1.4 Arial,sans-serif}
+.pe397-popup .pe397-folio summary{padding:7px 2px;cursor:pointer;font-weight:bold;color:#132b3e}
+.pe397-popup .pe397-folio summary:focus-visible{outline:2px solid #1769d1;outline-offset:2px}
+.pe397-popup .pe397-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.pe397-popup .pe397-table{max-height:290px;overflow:auto}
+.pe397-popup .pe397-table table{width:100%;border-collapse:collapse;table-layout:auto;font:12px/1.4 Arial,sans-serif}
+.pe397-popup .pe397-table th{width:43%;text-align:left;font-weight:600;vertical-align:top;background:#f4f6f8;color:#163348}
+.pe397-popup .pe397-table td{color:#1d3649;text-align:left}
+.pe397-popup .pe397-table th,.pe397-popup .pe397-table td{padding:6px 8px;border-bottom:1px solid #eee;overflow-wrap:anywhere}
+.pe397-popup .pe85-coordinate-link,.pe397-popup .pe85-coordinate-link:visited{font:inherit;color:#1769d1;text-underline-offset:2px}
+.pe397-popup .leaflet-popup-close-button{right:0!important;top:0!important;width:24px!important;height:24px!important;background:none;color:#757575!important;border-radius:0;font:16px/24px Tahoma,Verdana,sans-serif!important}

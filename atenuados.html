@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es"><head><meta name="pa-version" content="Atenuados V-2.53"><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; worker-src blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://server.arcgisonline.com; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; media-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Atenuados y Dashboard · V-2.52</title>
+<link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
+<link rel="stylesheet" href="atenuados-v240.css">
+<script defer src="vendor/leaflet-1.9.4/leaflet.js"></script>
+<script src="seguridad-v255.js"></script><script src="atenuados-cripto-v253.js"></script>
+<script defer src="atenuados-reglas-v240.js"></script>
+<script defer src="atenuados-carga-v240.js"></script>
+<script defer src="atenuados-tablero-v240.js"></script>
+<link rel="icon" href="favicon.ico?v=233" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=233">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=233">
+<link rel="stylesheet" href="credito-v251.css"></head>
+<body>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-ports" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M6 6.5h1m3 0h7M6 17.5h1m3 0h7"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 22 21H2zM12 9v5m0 3v1"/></symbol>
+<symbol id="i-clients" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21v-4c0-6 12-6 12 0v4zM5 5a2.5 2.5 0 0 0 0 5M19 5a2.5 2.5 0 0 1 0 5M3 14c-3 1-2 5-2 6h3m17-6c3 1 2 5 2 6h-3"/></symbol>
+<symbol id="i-signal" viewBox="0 0 24 24"><path d="M2 8c5-5 15-5 20 0M5 12c4-4 10-4 14 0M9 16c2-2 4-2 6 0M12 20h.01M3 22 21 2"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M4 12h6l2-5 3 10 2-5h3"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><path d="M3 21V11h4v10zm7 0V6h4v15zm7 0V2h4v19z"/></symbol>
+</defs></svg>
+<header class="app-header"><div class="heading"><svg class="brand" viewBox="0 0 56 66" aria-hidden="true"><path fill="#ff690b" d="M28 1 54 16v28L28 59V43l13-8V24L28 17 15 24 2 17z"/><path fill="#f25805" d="m2 24 13 8v32L2 56z"/><path fill="#ff7b20" d="m17 27 11-6 10 6-11 6z"/></svg><div><h1>Atenuados y Dashboard</h1><p>Análisis de potencias por puerto PON</p></div></div>
+<div class="header-right"><div class="actions">
+<button type="button" data-load="matriz"><svg class="icon"><use href="#i-db"/></svg>Carga de matriz</button>
+<button type="button" data-load="clientes"><svg class="icon"><use href="#i-db"/></svg>Cargar clientes</button>
+<button type="button" data-load="potencias"><svg class="icon"><use href="#i-db"/></svg>Cargar potencias</button>
+<button type="button" id="at240-export" disabled><svg class="icon"><use href="#i-download"/></svg>Exportar</button>
+<button type="button" id="at240-clear-bases" class="danger" disabled title="Borra de este navegador las bases de matriz, clientes y potencias"><svg class="icon"><use href="#i-trash"/></svg>Borrar bases</button>
+</div></div></header>
+<main>
+<div class="bases"><span id="at240-clientes">Clientes: sin base</span><span id="at240-potencias">Potencias: sin base</span><span id="at240-matriz">Matriz: sin base</span><button id="at240-run" type="button" disabled>Análisis</button><small id="at240-storage-note">Bases guardadas localmente en este navegador · Análisis manual</small></div>
+<div class="navigation"><nav class="tabs" role="tablist" aria-label="Tableros del módulo"><button type="button" role="tab" id="tab-atenuados" aria-controls="panel-atenuados" aria-selected="true"><svg class="icon"><use href="#i-ports"/></svg>Atenuados</button><button type="button" role="tab" id="tab-dashboard" aria-controls="panel-dashboard" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-bars"/></svg>Dashboard</button></nav><p id="at240-status" class="status" role="status" aria-live="polite">Preparando análisis…</p><span class="preview-label">Atenuados V-2.53 · RX_20h</span></div>
+
+<section id="panel-atenuados" role="tabpanel" aria-labelledby="tab-atenuados">
+<div class="toolbar">
+<form class="account-search" id="at240-search-form" role="search" autocomplete="off" title="Busca en todas las bases cargadas o, con un puerto elegido, solo en ese puerto">
+<label for="at240-search">Buscar cuenta</label>
+<input id="at240-search" type="search" inputmode="text" placeholder="Número de cuenta" disabled>
+<button type="submit" id="at240-search-go" disabled>Buscar</button>
+</form>
+<div class="selectors">
+<label>Umbral (dBm)<select id="at240-threshold" aria-label="Umbral de atenuación"></select></label>
+<label>Porcentaje del puerto<select id="at240-percentage" aria-label="Porcentaje de cuentas atenuadas"></select></label>
+<label>Mínimo de cuentas<select id="at240-minimum" aria-label="Mínimo de cuentas atenuadas para marcar el puerto"></select></label>
+<div class="info"><button type="button" class="info-btn" aria-describedby="at240-info">ⓘ Criterios</button><div class="info-pop" id="at240-info" role="tooltip">
+<p>Potencia de la columna RX_20h (bajada, la que recibe la ONT; coincide con el gestor). Número ≤ umbral: cuenta atenuada; número mayor al umbral: en rango; OFF: ONT apagada; cualquier otro valor (-, 0, −255, vacío): sin medición. Porcentaje del puerto = cuentas atenuadas ÷ cuentas con potencia numérica; OFF y sin medición se muestran aparte y no entran en el porcentaje.</p>
+<p>Puerto ATENUADO: alcanza el porcentaje y tiene al menos el mínimo de cuentas atenuadas. POSIBLE DROP: alcanza el porcentaje con menos cuentas que el mínimo. SIN MEDICIONES: ninguna cuenta con potencia numérica. Clientes sin fila de potencias cuentan como sin medición en su puerto.</p>
+<p>Cuentas duplicadas: filas idénticas cuentan una vez; si una cuenta trae lecturas o puertos distintos queda fuera del cálculo, se lista para revisión y no bloquea su puerto. Se descartan registros sin cuenta válida y se quita el guion bajo final de las cuentas.</p>
+<p id="at240-olts">La matriz define los puertos del distrito.</p><p id="at240-notes" class="notes"></p></div></div>
+</div>
+</div>
+
+<div class="kpis">
+<article class="card kpi"><svg class="icon teal"><use href="#i-ports"/></svg><div><strong data-count="ports">—</strong><span>Puertos analizados</span></div></article>
+<article class="card kpi alert-card"><svg class="icon orange"><use href="#i-alert"/></svg><div><strong data-count="alert">—</strong><span>Puertos atenuados</span></div></article>
+<article class="card kpi drops-card"><svg class="icon amber"><use href="#i-drop"/></svg><div><strong data-count="drops">—</strong><span>Posibles drops</span></div></article>
+<article class="card kpi"><svg class="icon teal"><use href="#i-clients"/></svg><div><strong data-count="low">—</strong><span>Cuentas atenuadas</span></div></article>
+<article class="card kpi"><svg class="icon muted"><use href="#i-signal"/></svg><div><strong data-count="off">—</strong><span>ONT apagadas</span></div></article>
+<article class="card kpi kpi-export"><svg class="icon muted"><use href="#i-db"/></svg><div><strong data-count="missing">—</strong><span>Sin medición</span></div><button type="button" class="mini" id="at240-export-missing" disabled title="Excel con las cuentas sin medición">Exportar</button></article>
+<article class="card kpi kpi-export"><svg class="icon muted"><use href="#i-pin"/></svg><div><strong data-count="noCoords">—</strong><span>Sin coordenadas</span></div><button type="button" class="mini" id="at240-export-nocoords" disabled title="Excel con las cuentas sin coordenadas">Exportar</button></article>
+<button type="button" id="at240-dups" class="card kpi" disabled title="Excel con las cuentas duplicadas por revisar"><svg class="icon orange"><use href="#i-copy"/></svg><div><strong data-count="duplicates">—</strong><span>Cuentas duplicadas</span><small>Exportar a Excel</small></div></button>
+</div>
+
+<div class="main-grid">
+<section class="card map-card" aria-labelledby="at240-map-title">
+<div class="card-head"><div><h2 id="at240-map-title">Mapa de cuentas</h2><p class="subtitle" id="at240-map-note">Elige un puerto de la lista y pulsa "Ver cuentas", o busca una cuenta.</p></div>
+<p class="legend" aria-label="Colores de las cuentas"><i class="dot c-low"></i>Atenuada <i class="dot c-ok"></i>En rango <i class="dot c-off"></i>OFF <i class="dot c-miss"></i>Sin medición</p></div>
+<div id="at240-map" class="map" role="region" aria-label="Mapa de cuentas del puerto seleccionado"><p class="map-empty">Pulsa Análisis para habilitar el mapa.</p></div>
+<section id="at240-chart" class="chart-win" role="dialog" aria-modal="false" aria-labelledby="at240-chart-title" hidden><button type="button" class="chart-x" id="at240-chart-x" aria-label="Cerrar gráfica" title="Cerrar">×</button><div id="at240-chart-body"></div></section>
+</section>
+<aside class="side">
+<section class="card port-card" id="at240-port" aria-live="polite"></section>
+<section class="card priority-card"><div class="card-head"><div><h2>Puertos atenuados</h2><p class="subtitle" id="at240-priority-note">De mayor a menor atención (cuentas atenuadas)</p></div></div><div id="at240-priority" class="priority" tabindex="0" aria-label="Lista de puertos atenuados"></div></section>
+</aside>
+</div>
+</section>
+
+<section id="panel-dashboard" class="dashboard-pending" role="tabpanel" aria-labelledby="tab-dashboard" hidden><article class="card"><svg class="icon orange"><use href="#i-bars"/></svg><h2>Dashboard</h2><p>Este tablero está pendiente de definición.</p><p class="subtitle">El análisis de puertos y el mapa están en la pestaña Atenuados.</p><button type="button" id="back-atenuados">Volver a Atenuados</button></article></section>
+</main>
+<footer>Centro de Análisis Operativo · Atenuados V-2.53 · Análisis manual local · Dashboard pendiente de definición</footer>
+
+<input type="file" id="at240-file" accept=".xlsx" hidden>
+<dialog id="at240-upload" class="upload-dialog" aria-labelledby="at240-upload-title"><div class="upload-title" id="at240-upload-title">Atenuados · Carga de Excel</div><div class="cloud-scene" aria-hidden="true"><div class="cloud">☁<span>↑</span></div><div class="excel">XLS</div></div><h3 id="at240-upload-heading">Procesando archivo Excel…</h3><p id="at240-upload-stage" role="status" aria-live="polite">Preparando lectura…</p><div class="upload-caption"><span>Progreso de carga</span><strong id="at240-upload-percent">0 %</strong></div><div class="upload-track" role="progressbar" aria-label="Avance de la carga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="at240-upload-track"><div id="at240-upload-fill"></div></div><div id="at240-upload-detail" class="upload-detail" aria-live="polite"></div><button type="button" id="at240-upload-cancel">Cancelar carga</button><button type="button" id="at240-upload-accept" disabled>Aceptar</button></dialog>
+<dialog id="at240-msg" class="msg-dialog" aria-labelledby="at240-msg-title"><h2 id="at240-msg-title">Búsqueda de cuenta</h2><p id="at240-msg-text"></p><button type="button" id="at240-msg-ok">Aceptar</button></dialog>
+<div class="pa-credit" aria-label="Creado por Primavera">By: Primavera</div></body></html>

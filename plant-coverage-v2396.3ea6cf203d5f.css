@@ -1,0 +1,19 @@
+/* V-2.39.1 · Controles exclusivos de coberturas Planta Externa. */
+#plantModule #coverageMenu{width:640px;max-width:calc(100vw - 24px);box-sizing:border-box;max-height:calc(100vh - 30px);display:flex;flex-direction:column;}
+#plantModule #coverageMenu.hidden{display:none;}
+#plantModule #coverageGroups{min-height:0;overflow-y:auto;overflow-x:hidden;padding:3px 3px 8px;max-height:calc(100vh - 230px);}
+#plantModule .coverage-group:hover .coverage-submenu,#plantModule .coverage-group:focus-within .coverage-submenu{position:relative;top:auto;left:auto;right:auto;min-width:0;max-width:100%;box-sizing:border-box;max-height:220px;}
+#plantModule .pe210-coverageFooter{border-top:1px solid #efdacc;padding-top:10px;flex-wrap:wrap;gap:10px;flex-shrink:0;}
+#plantModule .pe2391-coverageActions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;margin-left:auto;}
+#plantModule .pe2391-coverageActions .btn{font-size:12px;padding:7px 10px;white-space:nowrap;min-height:32px;}
+#plantModule #coverageClear{display:inline-block;margin:0;}
+#plantModule #coverageExport{color:#17365f;border-color:#17365f;}
+#plantModule #coverageDelete{color:#b93816;border-color:#dc603b;}
+#plantModule #coverageExport:disabled,#plantModule #coverageDelete:disabled{opacity:.45;cursor:not-allowed;}
+@media(max-width:580px){#plantModule #coverageMenu{left:12px;top:12px;}#plantModule .pe2391-coverageActions{width:100%;justify-content:flex-start;}#plantModule .pe2391-coverageActions .btn{flex:1;}#plantModule #coverageGroups{max-height:calc(100vh - 270px);}}
+.pe394-coverage-label{background:#fffaf6;border:1px solid #eb9c64;border-radius:7px;color:#14254d;box-shadow:0 3px 12px #14254d33;font:600 13px Arial,sans-serif;pointer-events:none!important;white-space:normal;max-width:min(320px,75vw)}.pe394-coverage-names{max-height:160px;overflow:hidden;overflow-wrap:anywhere}.pe394-coverage-names>div+div{margin-top:4px;padding-top:4px;border-top:1px solid #efdacc}
+
+
+#plantModule #coverageMenu{width:min(860px,calc(100vw - 36px))}#plantModule .pe210-coverageFooter{gap:10px;justify-content:flex-start}#plantModule .pe210-coverageFooter>label{white-space:nowrap}.pe394-intensity{display:flex;align-items:center;gap:7px;padding-left:10px;border-left:1px solid #efdacc;flex:1;min-width:170px;max-width:290px;font-size:12px}.pe394-intensity label{white-space:nowrap}.pe394-intensity input{min-width:65px;flex:1;accent-color:#ed6b20}.pe394-intensity output{min-width:34px;text-align:right}#plantModule .pe2391-coverageActions{margin-left:auto}.pe394-head-actions{display:flex;gap:12px;align-items:center}#pe394-close{background:transparent;border:0;color:#14254d;font-size:24px;cursor:pointer;padding:2px 7px;line-height:1}#pe394-close:hover{background:#f3dcc7;border-radius:5px}
+
+.leaflet-tooltip.pe394-coverage-label{width:max-content!important;min-width:0!important;max-width:min(360px,75vw)!important;white-space:nowrap!important;writing-mode:horizontal-tb!important;font:600 11px/1.35 Arial,sans-serif!important;padding:5px 8px}.pe394-coverage-names,.pe394-coverage-names>div{width:auto!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;writing-mode:horizontal-tb!important}.pe394-coverage-names>div{overflow:hidden;text-overflow:ellipsis}

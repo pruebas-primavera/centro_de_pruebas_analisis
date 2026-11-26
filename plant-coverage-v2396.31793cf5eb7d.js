@@ -1,0 +1,181 @@
+/* V-53: módulo independiente de visualización de coberturas KMZ/KML. */
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+let intensity=28;const INTENSITY_KEY='primavera_plant_coverage_intensity';try{const v=localStorage.getItem(INTENSITY_KEY);if(v!==null&&Number.isFinite(Number(v)))intensity=Math.max(0,Math.min(100,Number(v)));}catch{}
+const groups=['PATRIA','SANTA ANA','SANTA ANA II','VALLARTA','AMPLIACION SOLARES 2','SOLARES'];
+const colors=['#DB7138','#D15C81','#20B8A5','#E2A032','#B76B4B','#A97D48'];
+let map,features=[],active=new Set(),shown=false,layer,hideTimer=null,coverageReady=Promise.resolve(),uploadBusy=false;
+let operationBusy=false;
+function allGroups(){return [...groups.filter(g=>features.some(f=>f.group===g)),...new Set(features.map(f=>f.group).filter(g=>!groups.includes(g)))];}
+function groupColor(g){const i=groups.indexOf(g);if(i>=0)return colors[i];let h=0;for(const c of g)h=(h*31+c.charCodeAt(0))>>>0;return `hsl(${h%360} 52% 48%)`;}
+function actions(){for(const id of ['coverageExport','coverageDelete']){const b=$(id);if(b)b.disabled=!features.length||uploadBusy||operationBusy;}}
+window.primaveraCoverageShapes=()=>features.flatMap(f=>f.shapes);
+// V-68: consultas y ocultación temporal exclusivas del Top 10; sin alterar active ni persistencia.
+let top68Hidden=false;
+window.primaveraCoverageFeatures=()=>features.map(f=>({group:f.group,shapes:f.shapes}));
+window.primaveraCoverageTop10Hidden=value=>{top68Hidden=!!value;draw()};
+function notifyGrid(shapes,reset=false){window.dispatchEvent(new CustomEvent('primavera:coverage-updated',{detail:{shapes,reset}}))}
+function hideMenu(){shown=false;clearTimeout(hideTimer);$('coverageMenu').classList.add('hidden');$('coverageToggle').setAttribute('aria-expanded','false')}
+function scheduleHide(){clearTimeout(hideTimer);if(shown&&!uploadBusy&&!operationBusy&&!$('coverageMenu').classList.contains('pe210-dragging'))hideTimer=setTimeout(hideMenu,3000)}
+const DB_NAME='primavera_coverage_v55', DB_STORE='coverage', DB_KEY='current';
+function openCoverageDb(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(DB_STORE))req.result.createObjectStore(DB_STORE)};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function coverageRead(){const db=await openCoverageDb();try{return await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,'readonly');const r=tx.objectStore(DB_STORE).get(DB_KEY);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}finally{db.close()}}
+async function coverageSave(value){const db=await openCoverageDb();try{await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,'readwrite');tx.objectStore(DB_STORE).put(value,DB_KEY);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Almacenamiento interrumpido'))})}finally{db.close()}}
+function boundsFor(indices){if(!map||!indices.length)return;const bounds=L.latLngBounds([]);for(const i of indices){const f=features[i];if(!f)continue;for(const shape of f.shapes)for(const ring of shape)for(const pair of ring){if(Array.isArray(pair)&&pair.length>=2&&Number.isFinite(pair[0])&&Number.isFinite(pair[1]))bounds.extend(pair)}}if(bounds.isValid())map.fitBounds(bounds,{padding:[28,28],maxZoom:16,animate:true})}
+
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/_/g,' ').replace(/\s+/g,' ').trim();
+// V-2.39.1: conservar reglas Primavera y admitir nombres de otros distritos.
+function identify(name,folder){
+ const f=norm(folder),n=norm(name);
+ if(f==='COBERTURA'&&n==='SOLARES')return 'SOLARES';
+ if(groups.includes(f))return f;
+ // Carpetas desconocidas conservan su agrupación; contenedores genéricos usan el nombre.
+ if(f&&!['COBERTURA','COBERTURAS','DOCUMENT','KML','REDA'].includes(f))return f;
+ if(n.includes('SANTA ANA II'))return 'SANTA ANA II';
+ if(n.includes('SANTA ANA'))return 'SANTA ANA';
+ if(n.includes('PATRIA'))return 'PATRIA';
+ if(n.includes('VALLARTA'))return 'VALLARTA';
+ if(n.includes('SOLARES 2'))return 'AMPLIACION SOLARES 2';
+ if(n==='SOLARES')return 'SOLARES';
+ return f&&!['COBERTURA','COBERTURAS','DOCUMENT','KML'].includes(f)?f:(n||'SIN GRUPO');
+}
+const children=(node,tag)=>[...node.children].filter(n=>n.localName===tag);
+const descendants=(node,tag)=>[...node.getElementsByTagName('*')].filter(n=>n.localName===tag);
+const directName=node=>children(node,'name')[0]?.textContent?.trim()||'';
+function parseCoords(t){
+ const tokens=String(t||'').trim().split(/\s+/).filter(Boolean),ring=[];
+ for(const token of tokens){const a=token.split(',');if(a.length<2||!a[0].trim()||!a[1].trim())return null;const lon=Number(a[0]),lat=Number(a[1]);if(!Number.isFinite(lat)||!Number.isFinite(lon)||Math.abs(lat)>90||Math.abs(lon)>180)return null;ring.push([lat,lon]);}
+ return new Set(ring.map(p=>JSON.stringify(p))).size>=3?ring:null;
+}
+function parseKml(xml){
+ const doc=new DOMParser().parseFromString(xml,'application/xml');if(descendants(doc,'parsererror').length)throw Error('El KML contiene XML inválido');
+ const result=[],report={found:0,invalid:0,excluded:0};
+ for(const mark of descendants(doc,'Placemark')){
+  const polygons=descendants(mark,'Polygon');report.found+=polygons.length;
+  let folder='',parent=mark.parentElement;while(parent){if(parent.localName==='Folder'&&directName(parent)){folder=directName(parent);break;}parent=parent.parentElement;}
+  const name=directName(mark)||'Sin nombre';
+  if(norm(name).startsWith('RT')){report.excluded+=polygons.length;continue;}
+  const explicit=descendants(mark,'Data').find(d=>d.getAttribute('name')==='cluster');const group=explicit?norm(children(explicit,'value')[0]?.textContent)||identify(name,folder):identify(name,folder),shapes=[];
+  for(const poly of polygons){
+   const outer=children(poly,'outerBoundaryIs')[0],ring=parseCoords(outer?descendants(outer,'coordinates')[0]?.textContent:'');
+   const holes=children(poly,'innerBoundaryIs').map(h=>parseCoords(descendants(h,'coordinates')[0]?.textContent));
+   if(!ring||holes.some(h=>!h)){report.invalid++;continue;}shapes.push([ring,...holes]);
+  }
+  if(shapes.length)result.push({name,group,shapes});
+ }
+ return {features:result,report};
+}
+// Consulta visual de coberturas sin interceptar los clics de cuentas o cuadrantes.
+let coverageNameTip=null,coverageNameTimer=null;
+function hideCoverageName(){clearTimeout(coverageNameTimer);coverageNameTimer=null;if(coverageNameTip&&map){map.removeLayer(coverageNameTip);coverageNameTip=null;}}
+function pointInRing(lat,lon,ring){
+ let inside=false;
+ for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+  const ay=ring[j][0],ax=ring[j][1],by=ring[i][0],bx=ring[i][1];
+  const dx=bx-ax,dy=by-ay,cross=(lon-ax)*dy-(lat-ay)*dx;
+  if(Math.abs(cross)<=1e-12&&lon>=Math.min(ax,bx)-1e-12&&lon<=Math.max(ax,bx)+1e-12&&lat>=Math.min(ay,by)-1e-12&&lat<=Math.max(ay,by)+1e-12)return true;
+  if((ay>lat)!==(by>lat)&&lon<(bx-ax)*(lat-ay)/(by-ay)+ax)inside=!inside;
+ }
+ return inside;
+}
+function coverageNamesAt(lat,lon){
+ if(top68Hidden)return [];
+ const names=[];
+ for(const i of active){const f=features[i];if(!f)continue;
+  if(f.shapes.some(shape=>pointInRing(lat,lon,shape[0])&&!shape.slice(1).some(hole=>pointInRing(lat,lon,hole))))names.push(f.name||'Sin nombre');
+ }
+ return [...new Set(names)];
+}
+function displayCoverageName396(value){return String(value).trim().replace(/\s+/g,' ').split(' ').map((word,i)=>{if(/^(?:[IVXLCDM]+|OLT|PON|GPON|XGSPON|RFC|GDL|FTTH|RT)$/i.test(word))return word.toUpperCase();const lower=word.toLocaleLowerCase('es-MX');return i>0&&['de','del','la','las','los','el','y'].includes(lower)?lower:lower.charAt(0).toLocaleUpperCase('es-MX')+lower.slice(1)}).join(' ')}
+function showCoverageName(e){
+ hideCoverageName();if(!e.latlng)return;
+ const names=coverageNamesAt(e.latlng.lat,e.latlng.lng);if(!names.length)return;
+ const content=document.createElement('div');content.className='pe394-coverage-names';
+ for(const name of names){const line=document.createElement('div');line.textContent=displayCoverageName396(name);content.appendChild(line);}
+ coverageNameTip=L.tooltip({permanent:true,direction:'top',offset:[0,-8],interactive:false,className:'pe394-coverage-label',opacity:1}).setLatLng(e.latlng).setContent(content).addTo(map);
+ coverageNameTimer=setTimeout(hideCoverageName,5000);
+}
+
+
+function draw(){hideCoverageName();if(!layer)return;layer.clearLayers();if(top68Hidden)return;for(let i=0;i<features.length;i++){if(!active.has(i))continue;const f=features[i],color=groupColor(f.group);for(const shape of f.shapes)L.polygon(shape,{pane:'coverageV53',color,weight:2.4,opacity:.95,fillColor:color,fillOpacity:intensity/100,interactive:false}).addTo(layer)}}
+function updateButtons(){actions();const all=$('pe210-coverageAll');all.checked=features.length>0&&active.size===features.length;all.indeterminate=active.size>0&&active.size<features.length;document.querySelectorAll('.coverage-master').forEach(b=>{const indices=features.map((f,i)=>f.group===b.dataset.group?i:-1).filter(i=>i>=0);const count=indices.filter(i=>active.has(i)).length;b.classList.toggle('all',count>0&&count===indices.length);b.classList.toggle('partial',count>0&&count<indices.length);b.setAttribute('aria-pressed',String(count===indices.length&&count>0))});document.querySelectorAll('.coverage-option').forEach(b=>{const indices=b.dataset.indices.split(',').map(Number);const on=indices.every(i=>active.has(i));b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));b.textContent=(on?'● ':'○ ')+b.dataset.name})}
+function toggle(indices){const on=indices.every(i=>active.has(i));indices.forEach(i=>on?active.delete(i):active.add(i));updateButtons();draw();if(!on)boundsFor(indices)}
+function menu(){const root=$('coverageGroups');root.replaceChildren();for(const g of allGroups()){const indices=features.map((f,i)=>f.group===g?i:-1).filter(i=>i>=0);if(!indices.length)continue;const wrapper=document.createElement('div');wrapper.className='coverage-group';const master=document.createElement('button');master.className='coverage-master';master.type='button';master.dataset.group=g;master.style.background=`linear-gradient(#ffffff20,transparent),${groupColor(g)}`;master.textContent=g;master.title='Clic: encender o apagar todo el clúster; pasar el cursor: elegir polígono';master.addEventListener('click',()=>toggle(indices));const sub=document.createElement('div');sub.className='coverage-submenu';const byName=new Map();indices.forEach(i=>{const name=features[i].name;if(!byName.has(name))byName.set(name,[]);byName.get(name).push(i)});for(const [name,ids] of byName){const b=document.createElement('button');b.type='button';b.className='coverage-option';b.dataset.name=name;b.dataset.indices=ids.join(',');b.addEventListener('click',()=>toggle(ids));sub.append(b)}wrapper.append(master,sub);root.append(wrapper)}updateButtons()}
+function status(t,n){$('coverageProgress').classList.remove('hidden');$('coverageProgressText').textContent=t;$('coverageProgressBar').value=n}
+// V-67: identidad geométrica exacta, independiente del nombre y orden de anillos.
+function ringKey(ring){
+ const points=ring.map(p=>JSON.stringify([p[0]===0?0:p[0],p[1]===0?0:p[1]]));
+ while(points.length>1&&points[0]===points[points.length-1])points.pop();
+ const variants=[];
+ for(const sequence of [points,[...points].reverse()]){
+  const minimum=[...sequence].sort()[0];
+  sequence.forEach((p,i)=>{if(p===minimum)variants.push(sequence.slice(i).concat(sequence.slice(0,i)).join(';'))});
+ }
+ return variants.sort()[0]||'';
+}
+function shapeKey(shape){return JSON.stringify([ringKey(shape[0]),shape.slice(1).map(ringKey).sort()])}
+function mergeCoverage(existing,incoming){
+ const seen=new Set(existing.flatMap(f=>f.shapes.map(shapeKey))),added=[];let duplicates=0;
+ for(const f of incoming){const shapes=[];for(const shape of f.shapes){const key=shapeKey(shape);if(seen.has(key)){duplicates++;continue}seen.add(key);shapes.push(shape)}if(shapes.length)added.push({...f,shapes})}
+ return {features:existing.concat(added),added,duplicates,newCount:added.reduce((n,f)=>n+f.shapes.length,0)};
+}
+async function upload(file){
+ if(!file||uploadBusy||operationBusy)return;uploadBusy=true;actions();clearTimeout(hideTimer);
+ try{
+  await coverageReady;
+  status(`Leyendo ${file.name}...`,10);let parsed=[];
+  if(/\.kmz$/i.test(file.name)){
+   if(!window.JSZip)throw Error('No se pudo cargar el lector KMZ (JSZip)');
+   const zip=await JSZip.loadAsync(file),entries=Object.values(zip.files).filter(f=>!f.dir&&/\.kml$/i.test(f.name));
+   if(!entries.length)throw Error('El KMZ no contiene un archivo KML');status('Extrayendo geometrías...',45);
+   for(const entry of entries)parsed.push(parseKml(await entry.async('string')));
+  }else if(/\.kml$/i.test(file.name))parsed=[parseKml(await file.text())];else throw Error('Formato no admitido: utiliza KMZ o KML');
+  const report=parsed.reduce((a,x)=>({found:a.found+x.report.found,invalid:a.invalid+x.report.invalid,excluded:a.excluded+x.report.excluded}),{found:0,invalid:0,excluded:0});
+  const incoming=parsed.flatMap(x=>x.features);
+  if(!incoming.length)throw Error(`No se encontraron polígonos de cobertura válidos. Encontrados: ${report.found}; geometría inválida: ${report.invalid}; nombres RT excluidos: ${report.excluded}.`);
+  status('Comparando polígonos con las coberturas guardadas...',75);
+  const result=mergeCoverage(features,incoming);
+  if(result.newCount){
+   status('Guardando coberturas acumuladas...',90);
+   await coverageSave({features:result.features,filename:file.name,savedAt:new Date().toISOString()});
+   const firstNew=features.length;features=result.features;
+   for(let i=firstNew;i<features.length;i++)active.add(i);
+   menu();draw();notifyGrid(result.added.flatMap(f=>f.shapes));$('coverageToggle').disabled=false;
+  }
+  const message=`${report.found} polígonos encontrados · ${result.newCount} nuevos · ${result.duplicates} repetidos omitidos · ${features.reduce((n,f)=>n+f.shapes.length,0)} polígonos guardados`+(report.invalid?` · ${report.invalid} descartados por geometría inválida`:'')+(report.excluded?` · ${report.excluded} excluidos por nombre RT`:'');
+  status(message,100);alert(message);
+ }catch(e){status(`Error: ${e.message}`,0);alert(`No se pudo cargar la cobertura: ${e.message}`)}
+ finally{uploadBusy=false;actions();$('coverageProgress').classList.add('hidden');if(shown)scheduleHide();}
+}
+
+const xmlText=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+function exportKml(snapshot){
+ const ringXml=(ring,tag)=>{const points=ring.map(p=>[p[0],p[1]]);if(points.length&&JSON.stringify(points[0])!==JSON.stringify(points[points.length-1]))points.push(points[0]);return `<${tag}><LinearRing><coordinates>${points.map(([lat,lon])=>`${lon},${lat},0`).join(' ')}</coordinates></LinearRing></${tag}>`;};
+ const groupNames=[...new Set(snapshot.map(f=>f.group))];
+ const folders=groupNames.map(g=>`<Folder><name>${xmlText(g)}</name>${snapshot.filter(f=>f.group===g).map(f=>`<Placemark><name>${xmlText(f.name)}</name><ExtendedData><Data name="cluster"><value>${xmlText(g)}</value></Data></ExtendedData><MultiGeometry>${f.shapes.map(shape=>`<Polygon>${ringXml(shape[0],'outerBoundaryIs')}${shape.slice(1).map(r=>ringXml(r,'innerBoundaryIs')).join('')}</Polygon>`).join('')}</MultiGeometry></Placemark>`).join('')}</Folder>`).join('');
+ return `<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Respaldo de coberturas · Planta Externa</name>${folders}</Document></kml>`;
+}
+async function exportCoverage(){
+ if(uploadBusy||operationBusy)return;operationBusy=true;actions();clearTimeout(hideTimer);
+ try{await coverageReady;if(!features.length)return;if(!window.JSZip)throw Error('No se pudo cargar el generador KMZ (JSZip)');
+  const snapshot=features.map(f=>({...f,shapes:f.shapes.map(s=>s.map(r=>r.map(p=>[...p])))}));
+  const zip=new JSZip();zip.file('doc.kml',exportKml(snapshot));const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',mimeType:'application/vnd.google-earth.kmz'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Coberturas_Planta_Externa_'+new Date().toISOString().replace(/[:.]/g,'-')+'.kmz';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+ }catch(e){alert('No se pudo exportar la cobertura: '+e.message);}finally{operationBusy=false;actions();if(shown)scheduleHide();}
+}
+async function deleteCoverage(){
+ if(uploadBusy||operationBusy)return;operationBusy=true;actions();clearTimeout(hideTimer);
+ try{await coverageReady;if(!features.length)return;
+  const count=features.reduce((n,f)=>n+f.shapes.length,0);
+  if(!confirm(`¿Borrar las coberturas guardadas (${count} polígonos)? Esta acción no se puede deshacer. Los masivos se conservarán. Puedes cancelar y exportar un respaldo primero.`))return;
+  // Primero confirmar la transacción; ante error se conserva la vista actual.
+  const db=await openCoverageDb();try{await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,'readwrite');tx.objectStore(DB_STORE).delete(DB_KEY);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Borrado interrumpido'));});}finally{db.close();}
+  features=[];active.clear();top68Hidden=false;menu();draw();notifyGrid([],true);hideMenu();$('coverageToggle').disabled=true;$('coverageFile').value='';
+  alert('Coberturas borradas. Puedes cargar una nueva cobertura. Los masivos se conservaron.');
+ }catch(e){alert('No se pudo borrar la cobertura: '+e.message);}finally{operationBusy=false;actions();if(shown)scheduleHide();}
+}
+
+window.initCoverageV53=function(leafletMap){map=leafletMap;map.createPane('coverageV53');map.getPane('coverageV53').style.zIndex='350';map.getPane('coverageV53').style.pointerEvents='none';layer=L.layerGroup().addTo(map);map.on('click',showCoverageName);map.getContainer().addEventListener('click',hideCoverageName,true);map.on('movestart',hideCoverageName);$('pe394-close').addEventListener('click',e=>{e.stopPropagation();hideMenu()});$('pe394-close').addEventListener('pointerdown',e=>e.stopPropagation());$('pe394-intensity').value=String(intensity);$('pe394-value').textContent=intensity+'%';$('pe394-intensity').addEventListener('input',e=>{intensity=Number(e.target.value);$('pe394-value').textContent=intensity+'%';if(layer)layer.eachLayer(l=>l.setStyle({fillOpacity:intensity/100}));try{localStorage.setItem(INTENSITY_KEY,String(intensity))}catch{}scheduleHide()});$('coverageExport').addEventListener('click',exportCoverage);$('coverageDelete').addEventListener('click',deleteCoverage);actions();$('coverageFile').addEventListener('change',e=>{upload(e.target.files?.[0]);e.target.value=''});$('coverageToggle').addEventListener('click',e=>{e.stopPropagation();if(!features.length)return;if(shown){hideMenu()}else{shown=true;$('coverageToggle').setAttribute('aria-expanded','true');$('coverageMenu').classList.remove('hidden');scheduleHide()}});const coverageMenu=$('coverageMenu');['pointermove','pointerdown','click','keydown','focusin','touchstart'].forEach(event=>coverageMenu.addEventListener(event,scheduleHide));document.addEventListener('pointerdown',e=>{if(shown&&!coverageMenu.contains(e.target)&&!$('coverageToggle').contains(e.target))hideMenu()});$('pe210-coverageAll').addEventListener('change',e=>{active=e.target.checked?new Set(features.map((_,i)=>i)):new Set();updateButtons();draw()});$('coverageClear').addEventListener('click',()=>{active.clear();updateButtons();draw()});
+coverageReady=coverageRead().then(saved=>{if(!saved||!Array.isArray(saved.features)||!saved.features.length)return;if(features.length)return;features=saved.features;active=new Set();actions();hideMenu();menu();draw();notifyGrid();$('coverageToggle').disabled=false;$('coverageToggle').setAttribute('aria-expanded','false');$('coverageMenu').classList.add('hidden')}).catch(err=>{console.warn('No se pudieron recuperar las coberturas guardadas:',err);throw err});coverageReady.catch(()=>{})};
+})();
