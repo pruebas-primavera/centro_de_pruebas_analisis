@@ -1,0 +1,44 @@
+# Publica la llave de horario de Atenuados: a las 09:00 (hora de Ciudad de México) la escribe en horario.json
+# y a las 20:00 la vacía. Las ejecuciones de las :30 son de respaldo por si GitHub retrasa o salta alguna.
+# Necesita el secreto LLAVE_HORARIO (lo da el generador de llaves).
+name: Llave de horario
+on:
+  schedule:
+    - cron: '0 15 * * *'    # 09:00 Ciudad de México (UTC-6)
+    - cron: '30 15 * * *'   # 09:30 respaldo
+    - cron: '0 2 * * *'     # 20:00 Ciudad de México
+    - cron: '30 2 * * *'    # 20:30 respaldo
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency: llave-horario
+jobs:
+  horario:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Escribir horario.json
+        env:
+          LLAVE_HORARIO: ${{ secrets.LLAVE_HORARIO }}
+        run: |
+          set -euo pipefail
+          if [ -z "${LLAVE_HORARIO}" ]; then echo "Falta el secreto LLAVE_HORARIO"; exit 1; fi
+          FECHA=$(TZ=America/Mexico_City date +%F)
+          HORA=$(TZ=America/Mexico_City date +%H)
+          if [ "$((10#$HORA))" -ge 9 ] && [ "$((10#$HORA))" -lt 20 ]; then
+            H=$(printf '%s' "$FECHA" | openssl dgst -sha256 -hmac "$LLAVE_HORARIO" -binary | base64 -w0)
+            printf '{"fecha":"%s","h":"%s"}\n' "$FECHA" "$H" > horario.json
+          else
+            printf '{"fecha":"%s","h":null}\n' "$FECHA" > horario.json
+          fi
+          git config user.name "llave-horario"
+          git config user.email "llave-horario@users.noreply.github.com"
+          git add horario.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Llave de horario $FECHA $HORA h"
+          git push
+      - name: Pedir a GitHub Pages que publique el cambio
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "/repos/${{ github.repository }}/pages/builds" || echo "Pages se publicará con su proceso normal"
