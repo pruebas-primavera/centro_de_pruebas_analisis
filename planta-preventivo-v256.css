@@ -1,0 +1,58 @@
+/* Planta Externa V-2.56 · Mtto Preventivo: botones, panel del árbol y ventanas. */
+#plantModule .pv256-toggle,.pv256-toggle{background:#eef4ff;color:#1e3a8a;border-color:#9db4e6}
+.pv256-toggle:disabled{opacity:.48;cursor:not-allowed}
+.pv256-toggle[aria-pressed=true]{background:#1e5bff;color:#fff;border-color:#1e5bff}
+.pv256-load.busy{opacity:.6;pointer-events:none}
+
+#pv256Panel{position:absolute;top:12px;right:12px;z-index:1000;width:310px;max-height:calc(100% - 24px);display:flex;flex-direction:column;
+ background:#fffaf6;border:1px solid #efcdb8;border-radius:12px;box-shadow:0 8px 24px #0004;font:12px/1.35 Arial,Helvetica,sans-serif;color:#101b43;overflow:hidden}
+#pv256Panel[hidden]{display:none}
+.pv256-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:9px 34px 8px 12px;background:#101b43;color:#fff;position:relative}
+.pv256-head b{font-size:13px}
+.pv256-legend{display:flex;align-items:center;gap:4px;font-size:10px;color:#c9d2e3;width:100%}
+.pv256-legend i{display:inline-block;width:16px;height:0;border-top:4px solid;margin-left:6px;border-radius:2px}
+.pv256-legend i:first-child{margin-left:0}
+.lg-primaria{border-color:#fff!important;box-shadow:0 0 0 1px #0b1430}
+.lg-secundaria{border-color:#00ffff!important}
+.lg-distribucion{border-color:#1e5bff!important}
+#pv256Close{position:absolute;right:6px;top:5px;width:24px;height:24px;border:0;background:none;color:#c9d2e3;font-size:18px;line-height:24px;cursor:pointer;min-width:0;padding:0}
+.pv256-tree{overflow:auto;padding:6px 6px 8px;flex:1 1 auto;min-height:60px}
+.pv256-sub{margin-left:14px}
+.pv256-row{display:flex;align-items:center;gap:6px;padding:5px 6px;border-radius:6px;cursor:pointer;user-select:none;outline:none}
+.pv256-row:hover,.pv256-row:focus-visible{background:#ffe7d4}
+.pv256-row.sel{box-shadow:inset 3px 0 0 #ff690b;background:#fff1e6}
+.pv256-row.vacio{cursor:default;color:#8a97a8}
+.pv256-row.vacio:hover{background:none}
+.pv256-arrow{width:12px;flex:0 0 12px;color:#5b6b80;font-size:11px;text-align:center}
+.pv256-chk{width:12px;height:12px;flex:0 0 12px;border:1.5px solid #9aa6b6;border-radius:3px;background:#fff}
+.pv256-row.prendido .pv256-chk{background:#ff690b;border-color:#ff690b;box-shadow:inset 0 0 0 2px #fff}
+.pv256-row.parcial .pv256-chk{background:linear-gradient(#ff690b,#ff690b) center/6px 6px no-repeat #fff;border-color:#ff690b}
+.pv256-txt{flex:1;min-width:0;overflow-wrap:anywhere}
+.pv256-row small{color:#5b6b80;font-size:10px}
+.pv256-row.cl .pv256-txt{font-weight:bold;font-size:12.5px}
+.pv256-row.nv .pv256-txt{font-weight:600}
+.pv256-row.nv::after,.pv256-row.br::after{content:'';width:14px;flex:0 0 14px;border-top:3px solid;border-radius:2px}
+.pv256-row.nv-primaria::after{border-color:#fff;box-shadow:0 0 0 1px #0b1430}
+.pv256-row.nv-secundaria::after{border-color:#00ffff}
+.pv256-row.nv-distribucion::after,.pv256-row.nv-otro::after{border-color:#1e5bff}
+.pv256-vacio{color:#8a97a8;padding:8px;margin:0}
+.pv256-files{border-top:1px solid #efcdb8;padding:7px 10px 9px;flex:0 0 auto;max-height:34%;overflow:auto}
+.pv256-files ul{list-style:none;margin:5px 0 0;padding:0}
+.pv256-files li{display:flex;align-items:center;gap:6px;padding:3px 0}
+.pv256-files li span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.pv256-files li small{color:#5b6b80}
+.pv256-del{border:1px solid #f2b1a7;background:#fff;color:#b42318;border-radius:6px;padding:2px 8px;font-size:11px;cursor:pointer;min-width:0}
+.pv256-del:hover{background:#fdecea}
+.pv256-tip{font:bold 11px Arial,sans-serif}
+.pv256-pop{font:12px/1.4 Arial,sans-serif;color:#101b43;min-width:180px}
+.pv256-pop b{display:block;font-size:13px}
+.pv256-pop span{display:block;color:#5b6b80}
+.pv256-pop em{display:block;margin-top:4px;font-style:normal;background:#fff1e6;border-radius:5px;padding:3px 6px}
+.pv256-pop hr{border:0;border-top:1px solid #eee;margin:6px 0}
+.pv256-dialog div{display:flex;justify-content:flex-end;gap:8px}
+.pv256-dialog .si{background:#b42318;color:#fff;border-color:#b42318}
+.pv256-dialog{border:1px solid #efcdb8;border-radius:12px;padding:18px 20px 14px;max-width:420px;font:13px/1.45 Arial,sans-serif;color:#101b43;box-shadow:0 12px 32px #0005}
+.pv256-dialog::backdrop{background:#101b4355}
+.pv256-dialog h2{margin:0 0 8px;font-size:16px;border-left:4px solid #ff690b;padding-left:8px}
+.pv256-dialog p{margin:0 0 14px}
+.pv256-dialog button{border:1px solid #efcdb8;background:#fffaf6;border-radius:8px;padding:6px 14px;font-weight:bold;cursor:pointer}
