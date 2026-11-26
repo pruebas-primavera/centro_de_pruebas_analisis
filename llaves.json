@@ -1,0 +1,899 @@
+{
+ "v": 1,
+ "maestra": "rAwJ8uQx",
+ "iter": 600000,
+ "desde": "2026-11-26",
+ "hasta": "2026-12-02",
+ "generado": "2026-11-25T21:28:56.498Z",
+ "dias": {
+  "2026-11-26": {
+   "salt": "qulweCgW69PvSXUztu2NJQ==",
+   "iv": "E8GttYiCYk+CwgZT",
+   "ct": "c2PhS4YSevQmft55TPfDKZUtXV9djkDo/8tWYNhBbOtedJZDDlr+7HuHANUcDvGH",
+   "atras": {
+    "2026-11-25": {
+     "iv": "t/bR2KlqdeyHoNlk",
+     "ct": "VNZyaEmqewONpCzROK41TkRMOhq1j4+UIzvx/tpZYzCC3oElPQx8dI8qYIM4smKY"
+    },
+    "2026-11-24": {
+     "iv": "InEuanizTWwb9KGy",
+     "ct": "1cNLtuJl9WN/EIV9FxWgW0Sjchby34cpDCuTfFO7B/kKrCGNmoOzl0GpgsDj3x8+"
+    },
+    "2026-11-23": {
+     "iv": "Qjc/atolIek0wUdo",
+     "ct": "xPKu3aHRAzGsM8Z/yPmAdnxoXgcRUDvq9genEnNlR/IbcUbA20uArPeSENAh4j4+"
+    },
+    "2026-11-22": {
+     "iv": "N0Uf9M6O52UoicWn",
+     "ct": "YnCQaVJD71ex1sYa/oAiVb2opvev/GQsl5nj2zfNzEq8LIYYcH8wB1o/Vl1URdgQ"
+    },
+    "2026-11-21": {
+     "iv": "+y78wcY5me5+Lg8v",
+     "ct": "6GjSqkEdyUgIv5y7iJheSZ+Jy4NOvTwUDnEfHIOUdGGuJ3/UoAtlUDpH6/DSLpqn"
+    },
+    "2026-11-20": {
+     "iv": "bu1BK1XrNeY0QJUJ",
+     "ct": "IDE6s00aIFC6HqWo58fodcNg9UTTsjfEmSuX5IxiDo3SuLwv4s+4JuUytxlv6miD"
+    },
+    "2026-11-19": {
+     "iv": "oTh7bdO5jYY1aMGk",
+     "ct": "XdIhWZPOR59mJNZp0sdvqNMsQneFNpBFKDDM6oxz/sZzHXzTdRvAbtWvWoGox31k"
+    },
+    "2026-11-18": {
+     "iv": "fj41xwY6B8qxIZC0",
+     "ct": "82whsQT5Rg9oi0kwZ2nGtFb6RP3yC55EgVus19/An5iO31FAXhXjUFkHgfcBZaA5"
+    },
+    "2026-11-17": {
+     "iv": "6pTKuXA7bcF7T3f9",
+     "ct": "xROLgaehZvmCcXFXcENgndn1aBIQE1D58FlCB6nIRVJBS54RpisGOpjwJcmW770g"
+    },
+    "2026-11-16": {
+     "iv": "dgnegKp+SYM0Eihn",
+     "ct": "/mPozRBy4ofGUySivcdI9Fs5AwFwLj+UWGZq5r4Ag1SBNFpeUxFih0BYq4zJ0PE3"
+    },
+    "2026-11-15": {
+     "iv": "g3Acuktr792zm0qQ",
+     "ct": "D+gNiYUYsZjyDJ1wHOnUf4zdjRk2QhTIj5YKCNryUmgVWJAs2AT6ZE1jjwjWKNF1"
+    },
+    "2026-11-14": {
+     "iv": "b/xCDM+kJcvLp556",
+     "ct": "jKSTNjLLQ01KRoRVnQ03aVBmKFvVPkSOqPBHiiEcYAZgsNcO+8CGbJVJHfGFRLAN"
+    },
+    "2026-11-13": {
+     "iv": "3Ilzw0qBb71EIXqz",
+     "ct": "18DdG+72zCItHhLGpbLZLFKkSUr7OYVb2khpBr63YL5gjRp8WANxqji6hJW7afwv"
+    },
+    "2026-11-12": {
+     "iv": "zhpoPyURCt10iCpT",
+     "ct": "9RTn6roY1C2ay+xuVcfPWKwGPu9IVW/Z/iQEoy1jROraIugCL45lW20zRaHdbyGu"
+    },
+    "2026-11-11": {
+     "iv": "aw+lE0ZDgO2ccHhr",
+     "ct": "2+HJZ1ooYXY/mnJXXzedUt3PDWoNF/YUzp1T8l1b+ctI759vZtJo/qKadAgd/HjI"
+    },
+    "2026-11-10": {
+     "iv": "WS8842R9EcRm9dA5",
+     "ct": "PlJu3hfxaPaB3jDr4rvBwHhIIQAT/Rp/x/d0vLM/3vP8G6APQweEBcpLKG0x5gRG"
+    },
+    "2026-11-09": {
+     "iv": "5hCylPALYtZjU6dZ",
+     "ct": "7BZFivqC1GcTmeBJRNDYRE0jc1kynGrEfs1Dqpjs0PzKHIPqrLxYyi6nNCdTFP9t"
+    },
+    "2026-11-08": {
+     "iv": "iPTLuKtFZQbFUznX",
+     "ct": "QztOT1D08SwKaN2J5qNPR8FmR+Egdb9w3rHM9+O7i7mGhPvqYdqEzyRcxXftr26A"
+    },
+    "2026-11-07": {
+     "iv": "kIo7oEYRUgbmuUYX",
+     "ct": "CARkYaaPMim6BR3wv8ibJjTMBmzmqlWZ0y6MKS/zwIxqAL+2nbq2FCkSecLTRCb0"
+    },
+    "2026-11-06": {
+     "iv": "7sXCSr8LktftdOqP",
+     "ct": "lwYlp/ZDrf37aOtwiy8Ay+ULCTYnfw86hZu1NkiyQ9uWreLV3JKR0yFiGOkYmOgQ"
+    },
+    "2026-11-05": {
+     "iv": "sy45lyY2kEIabD0k",
+     "ct": "ZmKhYMnDhQA8neRfbaQU1/D5JXdaABxg8CBidihXHnHWCMP8hHYyTRVv7EP8QCmK"
+    },
+    "2026-11-04": {
+     "iv": "xeFu7GID4+2504LH",
+     "ct": "h/kzqt7/svto+Np1j0pU7ujEAy1AOukmPO87jHn49EgQqvVo/Yvm8XW1+RhS8EQD"
+    },
+    "2026-11-03": {
+     "iv": "rcK6F+CufCHUGvj1",
+     "ct": "2337qMvERGGF1TOawP5hql1QbaeSUzZFJDI8/d7Mi/GtC2Um8fI5UHdF+fm9qyx5"
+    },
+    "2026-11-02": {
+     "iv": "rfbP3ksEfS+g1/Wh",
+     "ct": "NJaMB3LCHm92SoeQ3OFH4K2yDYgJZNNLrQFUkhkBu8+xlrtdtRVLR51fUTBsk3CZ"
+    },
+    "2026-11-01": {
+     "iv": "c4Zd6ymD+RZcVrnI",
+     "ct": "ppEwox8iZxscmS/PVhKO+HSn/OA2/a5D5x2mimdu0Ll0FS/mWNp0bxgB3pOu9Ked"
+    },
+    "2026-10-31": {
+     "iv": "u22M4BcmWwh0Ow8G",
+     "ct": "gnAQgaLoZ3lQdiQ36X4zy5UMAnGh1jDwZB+Dkkcg5dS851mB9sKmmjAocZrNCgxK"
+    },
+    "2026-10-30": {
+     "iv": "6hFWB9JSCWUEuoLp",
+     "ct": "O4O8XCrQL1xDP6oN8ZC8n8VSpp+TfWIEsawLOeOYwxX1RRykEUKLjNZb9QcWgiv5"
+    },
+    "2026-10-29": {
+     "iv": "Rl9LQ2fJJ4K3d8wX",
+     "ct": "rvP1G+xpy9kO6i3MemKlVhSx+YTS2Uwga1kQs9E5VXnrerMp/xYg7iH5ROZO/CI/"
+    },
+    "2026-10-28": {
+     "iv": "BsjLok75iTRfuYP4",
+     "ct": "7xq8iY/3LugT1TJXgWlqG+PlNherEWbukFSBC1iMRoin2neG+0QOmbK1Ucw80CF1"
+    },
+    "2026-10-27": {
+     "iv": "7Z/ezqf3eOlJ/oj0",
+     "ct": "SHhyAGHRjy/xc4WO6W8eTKs48u08dh5m42azUHeZgW90Xlp47b5ZvMS9ymMZhUFi"
+    }
+   }
+  },
+  "2026-11-27": {
+   "salt": "FyZcaQRLpLYL1VRbBsDK0w==",
+   "iv": "j+ne06qV/+gK6DPq",
+   "ct": "DWMBPoRgjCUIQOEHG9t+1rApLwFGbMvWcA8kC3bxJFLla/1ZJ2duZmecKjIy0CbR",
+   "atras": {
+    "2026-11-26": {
+     "iv": "NQ3fPPF4FytUe+Ov",
+     "ct": "9nuqM3S00uM2HNGOuq828D8YhINiYy5Nx6mbcu2uELYUn0087KB2Ev2BLXBZHiSt"
+    },
+    "2026-11-25": {
+     "iv": "TMnvzNtO96qUr2I5",
+     "ct": "mGa0Hit6YKJG2xcK+CoZymbfxu+V4dRZTqeeT5F4loJo9TkLC7S0L3W0nTApPWVr"
+    },
+    "2026-11-24": {
+     "iv": "c9KshZ/jxNsHlJxT",
+     "ct": "skSh14FLlbKkHlZUKrDlcq+in56wzRkYfttu+3ugFp1n+TWXdmd5P1uhp7Bi/RYg"
+    },
+    "2026-11-23": {
+     "iv": "f8QsLNFyfbvgwD40",
+     "ct": "glINwD8IcTAV7MSsAJ9kGULgXPxGTdBPCEg4Etd5G1HGoyhPb+iIAivdx2FiZHCY"
+    },
+    "2026-11-22": {
+     "iv": "vb4UiurZYuGeaIkl",
+     "ct": "2fyf34ueKk3ddWea85rp+rLZoJ3aQOxMTRnP8tmyvU6X0XQ8OssusrZtmx//Gq0r"
+    },
+    "2026-11-21": {
+     "iv": "0bVr3CltW/mW7mpO",
+     "ct": "QJXKUZd0E0jrDRrcreZeMhGqcLRuDn+eDD+vos8UCHAZtxQ6MxhRYXkv+aSNVl9X"
+    },
+    "2026-11-20": {
+     "iv": "3JFeGTeMD476MA+G",
+     "ct": "rdN6j/VQH/DZM+/Nzz6o5eoPvpxev0RQOhLtdCpMRbtas4umkvqIHdohb7sOiIJf"
+    },
+    "2026-11-19": {
+     "iv": "dtiQFlyFX9BenfCL",
+     "ct": "uRJFIjEJNdX4vtfaMVDfCnbCDbfpQESAOE5GBue0aUk+Qlotd4lRiap+iFJ50pBa"
+    },
+    "2026-11-18": {
+     "iv": "QtHZ4YyeAt5XD++E",
+     "ct": "ae/HT424mZCZHRSm37yNUeLbrDFnrvXDm9IOoYQInX8cttDaxEZ45Mmfg+u8lB7X"
+    },
+    "2026-11-17": {
+     "iv": "645nsJ+qdo/iaKEp",
+     "ct": "akZQQqZ/zXk4lyzd1cxmleEGsYq539kj0yHsbekSRLi+OB78JMH6RucAiLeeMRZL"
+    },
+    "2026-11-16": {
+     "iv": "ZN2B16HJw/gjTh3w",
+     "ct": "d9NdXb2J1ERJIpVbRYWuLenQSaZrYQV8fw5n3xTbQeWB6eJBRwCJC7Yd+n2qOvq8"
+    },
+    "2026-11-15": {
+     "iv": "ulIEzqqfhBmPJFwj",
+     "ct": "fxPHyCRtVMloN5HcxvQCVNX90VSjgFKNw6ZOVYsJpS1BCohZP9PilwUmWfbzfSli"
+    },
+    "2026-11-14": {
+     "iv": "FDmt8u0n3rDaM+j7",
+     "ct": "k+3NtsNLHXnn/b84hMCPnNtR+APuj+HZIokLj/EWErQcEIic2dcGMobRAQZESzr0"
+    },
+    "2026-11-13": {
+     "iv": "ACxi0C8V4aq03DLb",
+     "ct": "+DqQySGRsZhMUigJhIE6DMcDMMxVg9Iop5InuxHSyimCuixIYOTCoeulbP93Op9N"
+    },
+    "2026-11-12": {
+     "iv": "lsILucWyzGTmCNOe",
+     "ct": "UFZj7+v7zkyO7ddjO2qwGa3uR4Wgs8giU3vlL7bvV1D360p/kaLaCQzcv+KheU0B"
+    },
+    "2026-11-11": {
+     "iv": "XVYVivf3LqbgqJKD",
+     "ct": "NJwpl0UcnIX6yR89nVv7+X6LupcYwoPyLA91rfIok+8nsfBxgaMwgez0YYLu7upL"
+    },
+    "2026-11-10": {
+     "iv": "GV2Zc6h/u2vePTHB",
+     "ct": "Y6AUBdyLr+s9azdTAmHzW331Euh7QOnEvPZ0E/aOx9V/vxzNIrIZPgDdFBZlLH7i"
+    },
+    "2026-11-09": {
+     "iv": "bY1OA/CdXp+4KRpo",
+     "ct": "Kpkc5/Gmdi9iSWGxWI5EFk0RO4CSlhFp6BpgDKnvazFUHhKmq7sLkjIpjZ0UiQ4p"
+    },
+    "2026-11-08": {
+     "iv": "kaZznmSnhnaqv1fs",
+     "ct": "YJbJaWommog5403oEuEloLNFaVwQ5nr4QVmSONyPtUMOGUfrQXa4DCCUhkRBTTxI"
+    },
+    "2026-11-07": {
+     "iv": "Nf44ofBHR/k+OUII",
+     "ct": "F5kPaeNWGV4w43CUOzmngCmbHxdDAl8fkmZ1E45HJf7kU1oHOLLI3cnS4AJ9bezE"
+    },
+    "2026-11-06": {
+     "iv": "EaUbaa8/glgqLWaV",
+     "ct": "6FPsF2I5RR+h1uITqKNByQpWbRR60gnYfDVIJeegPyZxPNsgARFQp1lZIKmD3sK5"
+    },
+    "2026-11-05": {
+     "iv": "U0cV0ljXJW3cmhfD",
+     "ct": "JgyQoTUHRok1F26E27PwSl5txyuI+Cs96fQ7bGGxROW+eOYGhyFT+lHxHMjsEm99"
+    },
+    "2026-11-04": {
+     "iv": "v5JFcuYjDueJ1Kd4",
+     "ct": "J3H/ksf2txBBJFw++O9pZMxy6SmDXJYQTMGre+bzKB+rHohJoVg+gYlFrbQm5qew"
+    },
+    "2026-11-03": {
+     "iv": "U5s2n476FOQ8/lLu",
+     "ct": "UekDosfk56fEyEYYxSrY/gvPXHwflAGPr6NdNFqQiQMJV71fVsP9BnemXzokcT7h"
+    },
+    "2026-11-02": {
+     "iv": "C+IWkhdA48GkXaxY",
+     "ct": "oCQ4G6aYYq5r9iXPV0OdkMgXdXcly8kbeF7JKruFD8PaNouRhnkUIsv5FSBuRHJv"
+    },
+    "2026-11-01": {
+     "iv": "wMmsc8qgJXf0Xo8+",
+     "ct": "0cyhpM5EBINdpNNTGspaXkRXEUtBTWxuI6tnGzxtzfeJMnVEXQtn++/cLXZ1A/8F"
+    },
+    "2026-10-31": {
+     "iv": "tgdJez87uQEev5Xv",
+     "ct": "SfcHfq379OVaO+M5U7UXVZwYC+0OaVl5ywYks/XuXdDikwEpFqf8Bndtm8dMQo38"
+    },
+    "2026-10-30": {
+     "iv": "G+id2JE/roekArLh",
+     "ct": "XLv83oORHrBhvmh0iltd4Rv1o5mmOKmZNsbfoFWxD3I62jVtAfkFxJ/YWylZDz+H"
+    },
+    "2026-10-29": {
+     "iv": "2HsKSWs5bCr2zHXv",
+     "ct": "2XV5BroSEt9sMIt7dO7anJzzZDFSxYTovfj9gIHBOI6NVdf0MrP7+8iFgLoq+Gly"
+    },
+    "2026-10-28": {
+     "iv": "JloHmdKSvohA1ZvE",
+     "ct": "PfjaZSoo/ec8PkGmrD9keJg09Akne5BwwXlI4sE2+31j0yi2yOPiuK1hUamhteQR"
+    }
+   }
+  },
+  "2026-11-28": {
+   "salt": "nb5UVTBZL4ca0eMEsmKdXg==",
+   "iv": "kLv3P1O3UgBUbrVg",
+   "ct": "Dolt+2lYlbx3HnQEfC4sOERylxCC7Qyu/QExhePMtP4KOz1Cwur8kzIajZWdu8so",
+   "atras": {
+    "2026-11-27": {
+     "iv": "KGyiV7CwNduyO0y/",
+     "ct": "bSCwTiBVjttdKCvNXsq6cdAC5ZIfLtI2t/rf3v5R/XWR4L3vpRgMwNGizgUuKU/4"
+    },
+    "2026-11-26": {
+     "iv": "5rPpfSkTYjzA8hpE",
+     "ct": "8c2ZtKJ1bCNXX00MAVhmH5aW0mB9hX7/mf2TMTjIVlYnbRCbEcG7/VI/tcd3v/7J"
+    },
+    "2026-11-25": {
+     "iv": "VUVVCDheEFtM4neT",
+     "ct": "JhGiLW46NgqgevAhvzoziSCaoLltXu6ynNu+dlf7SQvbRJPfrc/NLqd9ZTeMkItO"
+    },
+    "2026-11-24": {
+     "iv": "2NSwKz7esIOFZfUQ",
+     "ct": "gt19hGIgeTlsRzboWcoiXgJ83R7MUVIht5Zs5ZQVazzDS3ZatTOj+zhpYNCF7sL0"
+    },
+    "2026-11-23": {
+     "iv": "t3YeBjkRXZrwEgcN",
+     "ct": "9YziT/yTZRXAu8cTcSj9f3Na0WRWRcncVMyjNUXLKbmPYSoxCrnSAxNaysUI3XSk"
+    },
+    "2026-11-22": {
+     "iv": "3Jew2lQ43AWmJ9FP",
+     "ct": "CqAaa1TnM+tjzlpapDArMKN2BbDyd+uKkRCbAV47L/fbzuyDXg0Pcgz20Fv7Kgg4"
+    },
+    "2026-11-21": {
+     "iv": "3njn2Tcz0LvyqATq",
+     "ct": "AXYo3HIyJMGVVCu0EXrMogT4H2N9tq+i2OHalhA2V2J3vA5CugaKfL041G+8DdDY"
+    },
+    "2026-11-20": {
+     "iv": "2WGIK+h9p7fzUV4J",
+     "ct": "/5hIU3ZGuyGkv6sRtQRIXwcJoP8Dqe2/4iT6vwynIuvnh5epenJglOXH4Expbzda"
+    },
+    "2026-11-19": {
+     "iv": "Bch/mmdQu3reX3Gs",
+     "ct": "/tcCK8B2FsNBPV8Q84YVsGGTcAa4Dqbn3eRqFWt0pu3D0FdmNRE7xPSmcaEzzR+c"
+    },
+    "2026-11-18": {
+     "iv": "4DuYECt7gQpXCP/F",
+     "ct": "d43PRjUmQ3onxYx8ib/hgl70ZyNKh8OQK6W5sJFsNJgI8GluNPDYrtwE5VepIDVk"
+    },
+    "2026-11-17": {
+     "iv": "izDEdi9KruDYim4o",
+     "ct": "K5NsBSZPRlxn338k1DCOCLS8Z2EHa4MoZazlV8YkTU3ksC0p6y+41TqDaxsSqCY9"
+    },
+    "2026-11-16": {
+     "iv": "ibEI+2OTJP1q3RR1",
+     "ct": "msawgD1HDGPzNlFOJq35vz9A6XR3x5J2obSajBeFk1FzxDwlW7sFja3KcZp4tTov"
+    },
+    "2026-11-15": {
+     "iv": "41w4G7wIyfWFxo02",
+     "ct": "J5OXmzHXtZ0zwWUJaJXBBMOVY/iYD1b6ryj/dvCn2xnSJhrK3ig+PpJCBnT5pK2t"
+    },
+    "2026-11-14": {
+     "iv": "Hj6GnAihyiXKXZzO",
+     "ct": "QzjDmKchtGtH04UolLnu8mL/Q8u1++sWNIRcfF6AC9wTixAeKayf/KujlyROG8hG"
+    },
+    "2026-11-13": {
+     "iv": "7IkU2WL3UHCMqPsG",
+     "ct": "SJ1WcMXYtesJ0436zplgjQMz+6LX7eZKyGVbFBC8ne2bqYsrVbYcrH9eGD9Ao4m4"
+    },
+    "2026-11-12": {
+     "iv": "glEhIz6Tavf28BEy",
+     "ct": "aYr/lWAdaQQzofsfboJVjyM5NzEknLGzMSMqqHLeiHpsdVZCoaJM3s32ghGMTWiw"
+    },
+    "2026-11-11": {
+     "iv": "nexa0DChDZDGEt1O",
+     "ct": "jVJVPW3SinQPDLbWhj7j8WpENH2+ShPcghNcObMNDEIR7hNDT0FGPHkl/8tQRghc"
+    },
+    "2026-11-10": {
+     "iv": "TmtbrIDMdCqTbIYO",
+     "ct": "6UwqzE4LNM4Q0qFhIEUZwSHUspe11/U62mbTpgyj6HuPfECzVjWD2Vmn1jf+jenm"
+    },
+    "2026-11-09": {
+     "iv": "o4Om/2czGGKUU1B6",
+     "ct": "ieGGFVRUfnO5bnNdr0RSawT48POlE5jljPwMz4CBxlZBMOUshNzHdYuaUJYdq2VZ"
+    },
+    "2026-11-08": {
+     "iv": "oIyu/FHNrN+EQSqF",
+     "ct": "OB6EsreE81IEOvjwEv5/FxsEJODh73ZaTc0+0fJx+zLfqPvmxy4/c/3TV5NbFi0b"
+    },
+    "2026-11-07": {
+     "iv": "edFiD7YPh9l+F2xv",
+     "ct": "mpyD0XZ2MyQGzejdo9V633hvt02ucvDJYpRkV3zOHtcKklJz/JP7IPCKShWJFGwH"
+    },
+    "2026-11-06": {
+     "iv": "ShQuVzKG0cldCnSC",
+     "ct": "NXoB7dPf0ApAbo4r18ptsU05Q5T8CGPdoktj+C6EmktDiFAHuw+EVRWcplEVOTOA"
+    },
+    "2026-11-05": {
+     "iv": "iqemP3WMmif/p9zW",
+     "ct": "Nu8gxGflFlPAUuM3ldFT5jePf4COSxCjfKcL/JYe0eM039L+DRZcbx6IurSy4i/a"
+    },
+    "2026-11-04": {
+     "iv": "e5aclyG71LgG1xyc",
+     "ct": "nGHkXf9/JHSbQXJ521fMQjYWpkyYF0Rd++FSAln8d7sYF+PoWnSkHyMnBpiOwJ3G"
+    },
+    "2026-11-03": {
+     "iv": "dD3LZVZE2Zlk+cOQ",
+     "ct": "whGnkvNmxA7iXqFs9IK68DgHFCdwubtMP053t+DzGnjPL1s+vt5YSdaUs3c0r2mX"
+    },
+    "2026-11-02": {
+     "iv": "YkepVj6zgp3tewt4",
+     "ct": "CONQYn9EMdYEElhUp3QXy/oy22N6gpa00iuZH8DZZcXc01Xk8xgVJMWGJX4Txa2y"
+    },
+    "2026-11-01": {
+     "iv": "0xYDRbOS9qUSLD1o",
+     "ct": "paZfM0i0c/M6vNFCB2BlGDHee5EssdqRTfAoDtbwys+AZV0dLXijh3kCmt5gv8pW"
+    },
+    "2026-10-31": {
+     "iv": "lqEST6nKKiy2eBId",
+     "ct": "ivMyGI1BCnDyHx0hMKQ5zrtbk6NsEFPNmBSEYohIoWTcTIDzCujCvLBji/Cltw8o"
+    },
+    "2026-10-30": {
+     "iv": "sv3x76uEu5w3LW/L",
+     "ct": "Gmz+YUuffA/WStiNeNeTfhWR96MsscEgy0NrocxyAm2R0mRc0a754/lLMSf8JB8T"
+    },
+    "2026-10-29": {
+     "iv": "McVShL7ymTXhy+4P",
+     "ct": "dY2UdFpkRDv/3ECCUNUfUH6l4KWh3Vg/mEHlLo2Smv8D8DqQBDyCHSAp/rY5dmZZ"
+    }
+   }
+  },
+  "2026-11-29": {
+   "salt": "6Qno4AtHuh0XXgaaPz52hg==",
+   "iv": "ihMjpUZLnZabNvbD",
+   "ct": "0dTvO23zWRq9QyOhqsba9qVxOwwgIpvcI9NgAi3d4aFOdeqaDehoCWdPTbVHDrgF",
+   "atras": {
+    "2026-11-28": {
+     "iv": "VUuPT4NnDBGVN2uK",
+     "ct": "jE83zz86Kp0/V63oAglP4UEfxSo/syNYu5mwN0kTnLaQWWVP9ti9EYZxNXMDyX4M"
+    },
+    "2026-11-27": {
+     "iv": "n8C91TEYMrTC3nBo",
+     "ct": "kzuY9+fVixQk9ig7BQW6nEwlDMSe+npZtBJa2rgl3TpiK8UtVO2QBmkfsC+04nUd"
+    },
+    "2026-11-26": {
+     "iv": "JFNOdEygfpZVAQG0",
+     "ct": "JmxipO3bEYfp1y87NnMdBYJGiPYiDtkWUNM0I8j9/DKF7I2bIjzc+iznHGmF0jpS"
+    },
+    "2026-11-25": {
+     "iv": "1s+QuiCNwkKCWin6",
+     "ct": "AOFV0pc0Pc7+gZ408dZGff2aiMRcW1QBn3CsFM0FEKRyM9B0QIifCsFOX5d+0fBB"
+    },
+    "2026-11-24": {
+     "iv": "8vOlWYAhUqv7Xd4w",
+     "ct": "ysyeb7BWmIVvzbdhiY/oJR9t9p/VaJYeQoe55THBvNr75SvOxLN2m+FAIQCdeKxB"
+    },
+    "2026-11-23": {
+     "iv": "ejj8hhwoLVdICCYD",
+     "ct": "7qto3NJa1DCVG0Ry/CXzxt+4qmY2uOgyzfQzIQf+YXwQAjan2uT1VmqgAPPifvcs"
+    },
+    "2026-11-22": {
+     "iv": "dWCks04/IzSdfHe+",
+     "ct": "C8AmNACsRjBv/X6Ao8TASibqTGWl13HjB4pXFaGn/BccPd7HZLPWkUjQrUrmNGfW"
+    },
+    "2026-11-21": {
+     "iv": "oY0udNWB0TuzUphT",
+     "ct": "6hVsm3QHIXUo7loBZ9nTMPIk/0W1YtbnvqHYEhDuA+G4GIJEQwy0pps02xzTu9bM"
+    },
+    "2026-11-20": {
+     "iv": "HqnzPN0dgiopBYOv",
+     "ct": "9/E/wEupM8M+Nl8d8I7nFD/Rcua2MPkXc7MqVWx6GpZLBU58uLqrjsXJw/YUBttE"
+    },
+    "2026-11-19": {
+     "iv": "oKY3qj0aEJqq14+6",
+     "ct": "EGOXJEUfwSnws73znQNI3BMwuUzFiuc3EgutyKowk/MYp/ym7CT//5q1qlffcdC/"
+    },
+    "2026-11-18": {
+     "iv": "Gn5mQtjX3MbZG6EL",
+     "ct": "Nr/pDP+z9Ld+i7vDfFbjci7zHAXt8GjV8+7d51dqaIllIdjG5cNVSjI5p2BQlM+d"
+    },
+    "2026-11-17": {
+     "iv": "W0MpfN1FsI7jYeEm",
+     "ct": "fFxOZF3d6ALS4Ju7qLhAvkx+DZqOhk4PV/KXGk1dK65nxMJcsUeeIHkHvr83IK7B"
+    },
+    "2026-11-16": {
+     "iv": "NbypukUG9P1oI2UI",
+     "ct": "RwrT0CtQY2xKEQQHe8/Gi+ZJS6LIK/051ERqHfUpGVZWoiXVtYGJ58Rex5KrwrtK"
+    },
+    "2026-11-15": {
+     "iv": "JWMdcGsFJAiovHL5",
+     "ct": "EBHJe0zrYCI83IK6ElvV6o4VAWGMg2ZRf/f4G126AZWT/USVWw4Y2QKXztwf3wph"
+    },
+    "2026-11-14": {
+     "iv": "9DByVFksnz4raclZ",
+     "ct": "TiOxfes5kjasZXgIkPgdXbQSUfZ5EA26nlvllkDhLWnDrguA7OKxvKNkwoprsuHV"
+    },
+    "2026-11-13": {
+     "iv": "ieBeKMfmgiEgaoBC",
+     "ct": "5M5S2SaKf6dsPkQ/xiKfW8ku7XxrsWk/Yarqi0j1cRT3+7WW8Nl/3Af7BbIPKofN"
+    },
+    "2026-11-12": {
+     "iv": "ZEcbqTX7YtXY8s4Q",
+     "ct": "P2Rd8wd0XQW1c8cy7wsqJ/GAg4uPI2TbQJA4zOUmIkDzVmOeLrL8qQFpKizrOe9y"
+    },
+    "2026-11-11": {
+     "iv": "FMc+BteZ/Ojf4ksI",
+     "ct": "uKPHrDr4lI62CPSLigO0KqTiDY3GgxXCk7r8428JuqRtVd2QBqQj5Px6n8fXxUjy"
+    },
+    "2026-11-10": {
+     "iv": "N+yCvlC37rWDVGxq",
+     "ct": "PDUy5gNK6KUVNc82KU/Skqlv3iPE8tuIQcUOZKpi5++TgflJPbMLHQFwEZX+Zvdq"
+    },
+    "2026-11-09": {
+     "iv": "Dpa2jA+2GFsdjL6H",
+     "ct": "ql+MxLOIgVIqyWQQQVwXy3dkCqLAMxbNCyysVRCX5PDBtvS1aX1VlJ0qTC0Y9qZr"
+    },
+    "2026-11-08": {
+     "iv": "2k08zkZheT/f3OAy",
+     "ct": "sbETmBvz+HcQ3TQyyelzic6MURYlUtFkRt/Omc+IGN3g+D+QovItJ734Hsrf6UJC"
+    },
+    "2026-11-07": {
+     "iv": "x1p3G65mA5eYWmVy",
+     "ct": "UNzY8lZBbYnBZXq/2xzn7mu6W4eZxYxJmAfKi93eL/4A4rFbCg1I+r8hHT2pT7dW"
+    },
+    "2026-11-06": {
+     "iv": "Vnc872aB3VUdXQdh",
+     "ct": "t1q10Wp/TUFiVT8STluRfzILmH+irXiq6IEw9DMB0fVSXZBmCp30tdz8G8foEx8K"
+    },
+    "2026-11-05": {
+     "iv": "1aDlrC+FxODxhR1I",
+     "ct": "qeIvs1KcAfLzliv3zB2IJcS6P8b6vU4926VtbujENFIBz9g+22FPUwAn6Lyb6NYr"
+    },
+    "2026-11-04": {
+     "iv": "ESFed1+dlzn1+bpz",
+     "ct": "ccI7WJGhY82qD4rrZAyTJGF3u49Uf8lpqG9jZhWPi0glh7dG75KzssAon+u3NpTy"
+    },
+    "2026-11-03": {
+     "iv": "4WXsE5MDfqGx8xgp",
+     "ct": "bEKgssWvlZbhgQMhrV5yzBAaftmEYxa19le9GsErm2AmuZTkAxCiM5CpMpYhcKuu"
+    },
+    "2026-11-02": {
+     "iv": "A9FvtXzdBFwYaCAv",
+     "ct": "aFqngDjeZLUMLQ07cZsGcAm2QaSVhYU7N51IatetjpCaMUynf7gbET/z8Nqjt8YW"
+    },
+    "2026-11-01": {
+     "iv": "Wxx2xTd+5QcZjEat",
+     "ct": "1VPqucTcdPi7AC8vYG2JkL2fgqSp4z+iG2nng8s8MqgG1kE4/zpDB8zA5jvZbxnt"
+    },
+    "2026-10-31": {
+     "iv": "MBfJ+YanpnfBWFRm",
+     "ct": "e+AC+X7SSDQv00sROOsCrWW8mAfQUKCRw4y0NwsZy/ck80NlDFcT9EdpVCb48PVT"
+    },
+    "2026-10-30": {
+     "iv": "4KmGm8zOEKp0A3RZ",
+     "ct": "cxvrqTmsG8cMkthLX1Lp2k8R0U4FR/hxpk2qMwFhwMTqlrRTM6B0U7abomdrU8RS"
+    }
+   }
+  },
+  "2026-11-30": {
+   "salt": "h3jxlhTwpj8jy/mr67oK4A==",
+   "iv": "D1fvCKpXxgU9CAgg",
+   "ct": "2BmfRwxLcKog/VdRcLZ6AM+IdJiTOEcYq/5Ms7eHa8biIj/VCwg4QuBKzE2NkFOR",
+   "atras": {
+    "2026-11-29": {
+     "iv": "vU5nf4aoDmG2wcv7",
+     "ct": "SxOCfsAD4WnMZEtA/gix538odmxLmF8w8tKhh4TBxM/qHvp16O+mJ31X2zpvJxxV"
+    },
+    "2026-11-28": {
+     "iv": "66bRGZpR1ei7mR1C",
+     "ct": "Qgd2wkKrtctiKGKaX3oRLk6ah/SMBWzISClQnGJggh72RrgQnP3TcZohNJvqKYtq"
+    },
+    "2026-11-27": {
+     "iv": "3rdpV/uppPqVOBaE",
+     "ct": "KEy2nh72VW5aVfJ94KurzGiNvYCmEWczhjXLbM2Tue6Poo2mw+CRyUfKEvqvDdOK"
+    },
+    "2026-11-26": {
+     "iv": "SHyBC7v9nzqLw4Tt",
+     "ct": "XG5i5U4yNmmHp0JDgGRzch2JTBoR54eoV2JmcpM42ixKwSvUan6rTen/1IXLyGP+"
+    },
+    "2026-11-25": {
+     "iv": "cRahkS8aTx6zy34v",
+     "ct": "SeMz4fwibRGj2kFSMwPdNBb9TBCpCHdWOzoWaf79PptM7vSOkbfw7P99hgGashbZ"
+    },
+    "2026-11-24": {
+     "iv": "Dc4SlPD4hwFaWQ8S",
+     "ct": "hmyFipZrqzLGxXh7gHzdQsiU8zlRddg6LN3uMxPknYV5vznoOPxmz7lJrkzh8Cb+"
+    },
+    "2026-11-23": {
+     "iv": "BVP7y2LUynQZ6AmU",
+     "ct": "n2ziVkBOq5s4AzG5/f1rqhQ45iGS2MZMJ1+lZN2oJOpG5o7z4wkqvdomkou6IMxd"
+    },
+    "2026-11-22": {
+     "iv": "4mrcZ+aO4Qw1tRFC",
+     "ct": "3/9u5kp0uYazQaps1f16ujET6Wff/loPujBrzH5hmmPAU4uuBiHcILUM4Fff2moU"
+    },
+    "2026-11-21": {
+     "iv": "FZdsoy0RfRbdZX1J",
+     "ct": "bYJQp9a+yrjtmVjbcYcahXcB1nKHZqrlL3hBmc8hFtYicdZO0ZitU3EkoWZ8R5aW"
+    },
+    "2026-11-20": {
+     "iv": "gNiwHIw9knY/g0Hs",
+     "ct": "ZqYgXvDC9TYzOSf8eAosHRXJkj/1w/NReIJ4I5nkNr7CcelefFaafkiGUqj04Qtw"
+    },
+    "2026-11-19": {
+     "iv": "JSYCmdg3VS172IsS",
+     "ct": "3NBrnHoNljyU5cpfYbQenpSV+gld1UM+9gAPPR1FTd9rRbOrH2hTqf2SCVZMUyto"
+    },
+    "2026-11-18": {
+     "iv": "dnlngsIE/vz9gDsu",
+     "ct": "slYzv/M0IROD+8rlwHu/Cx6FkpBiAXUou5Hj3SEiKacxmYVamGnQhkDL4QrwQxI9"
+    },
+    "2026-11-17": {
+     "iv": "5HSieKRF6i1vwV1Z",
+     "ct": "n8iSoLVw5J4SUSMCFNLrJv03FZqlKgc/5tgkx/q0/yfLl2VG6/bpBIYG9ZOPrE6l"
+    },
+    "2026-11-16": {
+     "iv": "i9RA6DRQ6x1cJKxj",
+     "ct": "ozlUBAieHdsEiEA6lm+0f1r1nIQuyUSN3sLV+hcvI+AZ0UDfUbpotBkyXj/45rU4"
+    },
+    "2026-11-15": {
+     "iv": "DpEUQZp3sFjoMZ0R",
+     "ct": "8Ye9MRwJEdj/XyGrByte5V+2RS981QY5uNo5mEedTKPSwASzGdGeMYgVDA6FF55O"
+    },
+    "2026-11-14": {
+     "iv": "V2Yp47sJHPFL5G6r",
+     "ct": "p48ICLMFTudaNESLTTe/H75ODHvtJRw4A+1tNvSf216T0Yfng8yPi1Y+9a8sqUYd"
+    },
+    "2026-11-13": {
+     "iv": "uTiaWEuotc1Poj0E",
+     "ct": "dJKjMITXrxkW9NisF7bGJQlHzJ087U5UaH0IvX8qWLWpg8qDkDbXJ5LMokYEsaYP"
+    },
+    "2026-11-12": {
+     "iv": "nFdHjZPviQvNinQJ",
+     "ct": "5XtwsDfDYEhu0s/3S1r5A6KtmljmymIban8hGYFS3F7fnZb8xZBTNhCXEKsrgl0w"
+    },
+    "2026-11-11": {
+     "iv": "sFrBKgVguf6rPqAh",
+     "ct": "2Y85HJbkO22z972rLeWgdDjqotvm5mfyD7hJWzXET2y3dVYM6XSdNHRfCnx7Ft1r"
+    },
+    "2026-11-10": {
+     "iv": "2efNUI4KaqJDiW5L",
+     "ct": "8sgjZZBqfqHLiH3jTTu/lbJnvw9pWTj9IgQ63IVcGJijz/GLqB55r9HXmyjYENSZ"
+    },
+    "2026-11-09": {
+     "iv": "beuAVEfxQOWT0Wvg",
+     "ct": "fi2mwzHhxBBQpXi7OcjRPIVhxCVBdOYecFfVOFchFcVUYXD+QNqdud/Q8njHeGx1"
+    },
+    "2026-11-08": {
+     "iv": "s9kYeOsAMULaiQie",
+     "ct": "DhGI7G4/fvFAGlNK+qumlO8+KITAdjKmpjaVZCgFM14YwJ5cB0oUScfKujFxNL/i"
+    },
+    "2026-11-07": {
+     "iv": "Q/HLgcdfxdyBHRy7",
+     "ct": "g1GmbosgY5AjkVsont2RbOjnHv0z3eLUqrrucYjD8jhDY6F9b0+yxoSiyLr+8zhU"
+    },
+    "2026-11-06": {
+     "iv": "OwTIxLnWqdjqUlDv",
+     "ct": "saIuHKs4rzG8hy1/g3NvE0uDuSa39AqQ3aKALlidrEyNVHM8wgSq6sFBnC5qvXzK"
+    },
+    "2026-11-05": {
+     "iv": "wnEOxfGryEPhchJ+",
+     "ct": "ZpceWMGnxKyvbIb/YQBX1nGYzs16hMTMAHMN0ImkKDRr9tyBcTeoZiOfYljY0aDe"
+    },
+    "2026-11-04": {
+     "iv": "BmZ5/aDM7Om0Fmas",
+     "ct": "C8OXDDFVa0wkCymId74oacxfxrurDpXr34GihqKCExsXRkvHNZE+ioPBisZke6FH"
+    },
+    "2026-11-03": {
+     "iv": "7P3ncM/VdnnaMQCq",
+     "ct": "Amq0OJX00l4OX6mEWASyM3HuTGNQns0oBurbVx7Z8cQRLMKT4TYlpbxV2LuKLsor"
+    },
+    "2026-11-02": {
+     "iv": "UxQt1WZ8uOO1t0xn",
+     "ct": "jGZFegsD/cNDj35bSchw3/y3IkBXF/xNFECj506RYolq41+24qWqmUHXR1OyjqWS"
+    },
+    "2026-11-01": {
+     "iv": "LwSaQYwKfPv2vp0l",
+     "ct": "HrBqJL3wwptk798OqmxlWW+iK6dWcIB/hKh1tlnQBTwSYkOkwC/D3xFGqdlpNjpH"
+    },
+    "2026-10-31": {
+     "iv": "vcq0B+wBdLvEe2ug",
+     "ct": "xPbFCSKWJdN9/9/wv9TMIx5gB49OSzqNZsD7jVlFnUUiFIXmnthNlEHMxBMm2ABE"
+    }
+   }
+  },
+  "2026-12-01": {
+   "salt": "+u+37p6c040LMxl8YdB8mA==",
+   "iv": "qN4O7CUUGfwW4Xev",
+   "ct": "ht27j9uANU78M8+z8tMH6Rz/RZ7pCH8sIZf1ZdMptX2/UtJabaZpYyHjLlfmWWZQ",
+   "atras": {
+    "2026-11-30": {
+     "iv": "HuidzO+lbwSDcKXl",
+     "ct": "tT9Yv4vO5e4+94jug8GPIykQlramhYh8cXU9Aou1wyL+D0EEf2+fTma7TJTg60P7"
+    },
+    "2026-11-29": {
+     "iv": "sjrjfFN8mgcptIHG",
+     "ct": "1Qd5IFsxm8KJeZBvEgDmNWaHHr3zJeCkxqZ/GWgl7ZdVVZawfiWib7evK9nPUcV3"
+    },
+    "2026-11-28": {
+     "iv": "RMz+zIoze/2iTxX6",
+     "ct": "zYekgFScF4dCtZPzf3sIzFLstTZ39XC6uZYFqxzHIeV0Zh/YnaMaQgIgSvb9ER/R"
+    },
+    "2026-11-27": {
+     "iv": "vIUCncecYXVWTyb+",
+     "ct": "T8wE7++51GNUWm7jn7YHkchpPUHmNe5M+j/TB+FCeAJwN4R6zEOaai7EwGbNfRRT"
+    },
+    "2026-11-26": {
+     "iv": "AFwrTZbt33Dg1zmA",
+     "ct": "MyfYqe7uhyPgjO13eJkOTL6A0GB+wx2I9Qv6QNs5zYXvkzrV85LHHkwL/ivyscoZ"
+    },
+    "2026-11-25": {
+     "iv": "awX8nsw0bCCDIQiT",
+     "ct": "fSGE4tv4ao4N+wTxY+H5asLNs0iNQoAQQwxX9pG8Vj78hA/hTAp8ATwEJl6fYZj0"
+    },
+    "2026-11-24": {
+     "iv": "IucCaaI6rJNhg0FC",
+     "ct": "f9MOQZiTNLA1XMFGL4Cw38kBzQyUKNjTsb/PgJlLlNtzxWErS37EpyT19jhOPBwL"
+    },
+    "2026-11-23": {
+     "iv": "4jCQsOkfFxmkU38I",
+     "ct": "TSF/SIF/jIpQZfTO7Ej0Lhi0vaimHG9KCv+mjyzpNA/qNBRLO/lwW2jNB+nax6SX"
+    },
+    "2026-11-22": {
+     "iv": "vLGEl7eg0Ixs4zBu",
+     "ct": "F5/HjROoInJjeYGWHCwqxdoYoBDc3PGMzbAPsiGlIzxzyg7mPpu4fEGUzogvc6lN"
+    },
+    "2026-11-21": {
+     "iv": "JFGAxJ+ar5qRfak+",
+     "ct": "i7FkkI3uEwVZ2yRJu4AiW3krlspNPMqwB0xi6y9rFVV4yLs5Orxwrjm4gt5VA/8l"
+    },
+    "2026-11-20": {
+     "iv": "bGs6RMIBVjcZC07N",
+     "ct": "M0prMBY1o0pxAgtx/wpAw+aw9gPeO6ixbFKwPexVRUGUrri9Em5b9DHjVO3SSCip"
+    },
+    "2026-11-19": {
+     "iv": "oFUAUfjV+6cowLm+",
+     "ct": "IQ3EZ5q+g0YkGNFHRpuxfUa6fayE1anNrL/35a7werbIqdoa8brNkqeOV19paulI"
+    },
+    "2026-11-18": {
+     "iv": "ReOEoWTAHFZ+uGf3",
+     "ct": "TueoEGKPtWZlYdTAvjACUkS3QrYnYR3STEBSJMY5yY13p8KUUACJGftoh72ccF6Z"
+    },
+    "2026-11-17": {
+     "iv": "enuW4Nftx9iVLqR7",
+     "ct": "+QvAJYTco+rGw/vQKepxODgY7+GQ9PwkOaRWYUP2WhEpv4PbGSgz6s+xSIzDkTF+"
+    },
+    "2026-11-16": {
+     "iv": "W2+tZqjYAexlLkh2",
+     "ct": "6DlaOOg9AYqyaWICnXdz1Dsxlb/Xu52sbLddI4bNwxLeI79rc11nBKWWeO6W3cZX"
+    },
+    "2026-11-15": {
+     "iv": "iF9ofkP1MgOqoIiJ",
+     "ct": "V+6qow7NLM9R4yXlVMLFgWIYgXG/2FQidmHvWUH3GCJ9j/CM1GB57VezEDz/jcS2"
+    },
+    "2026-11-14": {
+     "iv": "Ymqd+I7myIc5xBB1",
+     "ct": "dlfaMkMJiHQAlOPBdIDlVL7cGcjoGM5uWvbmK3K0pE98f7wYQGKiRyUj89o+QId5"
+    },
+    "2026-11-13": {
+     "iv": "/iKmeA//jr9yVv8R",
+     "ct": "q4mJTbu+P1hFRd9FPgEK+iNQZs9LY2rZGVw29oUBZVn1GHuIPIvbEGNMttMCMzH+"
+    },
+    "2026-11-12": {
+     "iv": "DieO5IXZvOMBWz4x",
+     "ct": "0Lb2dsLGegrunub0wlf+vjU6N7X1chMJ5fvXkxTh81wNKot/1YymSgcm054tp0wT"
+    },
+    "2026-11-11": {
+     "iv": "4tzV3H93wmQAWA7a",
+     "ct": "TZZhUQG4yrQTomvD+e6yLttHjdbPdooM3OdCpD0VI+7qgnnBUDtLTpuZis3JMEq2"
+    },
+    "2026-11-10": {
+     "iv": "aG+qPaeZaTIOGuyg",
+     "ct": "iyModQP+f9sKN2yCB2VDIWJba9UyOBx1iylkQ99cH9G6i9kVvPF2jpJ8yY6uuwsW"
+    },
+    "2026-11-09": {
+     "iv": "D4+fZIFIoyBbCTfO",
+     "ct": "J1aIT6G2a7k/43xFKexIxFSdS6CD7La5rhY+UjSTDq3dZUu2e+D5a8PNarl90VPV"
+    },
+    "2026-11-08": {
+     "iv": "wLCv34P2CqUdKyuK",
+     "ct": "OofKj6dBL8SBJtdvFyCu+VW1HRs9i+tfmj9lMUwmqHRMRb2814bopDEgVx+8t8Tc"
+    },
+    "2026-11-07": {
+     "iv": "vn++7berKb+NaA0O",
+     "ct": "oWDhL67N+bROi0qO2lllGnaoFY+AaCieqpY7MhM+6MCe4LgkuRmXUtNdFjgyAE23"
+    },
+    "2026-11-06": {
+     "iv": "bNMoNETP3snOv6u8",
+     "ct": "WCufkkxRwyuiaJOXTuiZ2ex/yb5T2fdwcG1qv2OqG4Ha9fdXmBEf0/XbmwOmNJ34"
+    },
+    "2026-11-05": {
+     "iv": "16+taRhxtLJbH3sY",
+     "ct": "FwU0OBDN0ZXunRJiHIbEABU3sbS7jmsi7JYlXBJcLHLCG23NycWL95FMZZoWy+jp"
+    },
+    "2026-11-04": {
+     "iv": "avDEFykfGOQy0BYs",
+     "ct": "4E2VNAsTLINkNjZLX+uohnoDPYPl+tAfIfPQGjXZbqKp0jPfLhE+dLmQS0w+ZBej"
+    },
+    "2026-11-03": {
+     "iv": "eZc73LKUxnZ1h4Uu",
+     "ct": "hbPyA7LsqGdIDKjgKXADnakoAWoF1REYV09Y+btWs+lhjOPkh0SZCg5bvBJbSpNJ"
+    },
+    "2026-11-02": {
+     "iv": "MpCZYQug6ymq+5b7",
+     "ct": "raJVjhKpe9ZRprn/gxkmeU/S8rNZZ4QLNfok/Y3MA2u3rPwbcJFsrw+rcjxAOlRn"
+    },
+    "2026-11-01": {
+     "iv": "HfTroltft1nb0CLb",
+     "ct": "rtU1EIzFiA4BLvZ9DlTnn0r+CG3K7HI+ckvZkjiU95MBsCaBcfrF2OtE9bPv+KLT"
+    }
+   }
+  },
+  "2026-12-02": {
+   "salt": "QUlKrdk0xgM+S9JjS133cg==",
+   "iv": "p6LJziV4adPZm5O3",
+   "ct": "IVtzKdAMw/Lp8vYb4Hsmr4+xt4LQW3HQdJqru/x8wZz5NajWR3xrBBJ+VEJ6Cuuk",
+   "atras": {
+    "2026-12-01": {
+     "iv": "4EyDEnJk1aVYY4n7",
+     "ct": "VeM9r8MGpgwG8csZjNZG3THizhNWFTFd9PnCMfonyZ9UHZNc2S5tZJlb0PY/2HUh"
+    },
+    "2026-11-30": {
+     "iv": "dYTyElIIfo3IgNK9",
+     "ct": "UmSDku/TFtPs37inlLznh12tbjsyhWA1WL+fGKNwc/AV2J8MuyNM2sDJcYTDypGQ"
+    },
+    "2026-11-29": {
+     "iv": "na+6E30dAMOjQB3Y",
+     "ct": "Z10bk4q8DDbjpwxyjyd2vT7EV6cszCbY6q+vZkmuNYC1AcPeJ6AOhP1d/jrjj7Dt"
+    },
+    "2026-11-28": {
+     "iv": "dgyGl4UQk/2i3d7+",
+     "ct": "LMDzLmKqVlvFyjzR91eIZN4bPWlt87FlxlotsM8d3QRycuVRKAvJHdr1Ln0rL9S1"
+    },
+    "2026-11-27": {
+     "iv": "NzKVaYFLiSdzcdxZ",
+     "ct": "FUoydq9sCp0NX5PPyJRvKkESx9YiWMfOFVsAH0DOOE5Th2y6Wr6hPivNgSeiB0Ib"
+    },
+    "2026-11-26": {
+     "iv": "HW7eumtrMofdri10",
+     "ct": "frM9OLMm+taLepeK1KpHpHnqnqo8JP95qv8X6gvKHNLmVobANqcs3lHSj801lhtF"
+    },
+    "2026-11-25": {
+     "iv": "jZowIZC7JuCr5+Ic",
+     "ct": "meqDRl/Jlcwyf+tnqMlMS7ud6IQkzcwkYOIcIgmBBOuqZMO/OesyFlHCHSMttAKD"
+    },
+    "2026-11-24": {
+     "iv": "86u5Gj6dXP4DtM25",
+     "ct": "0Z8L3MkkLsJ4ZRzVrcGwnpX7wKQk7JHLvnY+8Mz57MRmrIm7PYaklcrr8SLRyGQi"
+    },
+    "2026-11-23": {
+     "iv": "VRxM8llp566WCMrc",
+     "ct": "ElwlGDThEtalh8/OkTzaN++A/g6M0LTIQrraDqUTbD5+wmRl//oz6yAFKmjwdvfx"
+    },
+    "2026-11-22": {
+     "iv": "EwNNpFDO4vlXYyVk",
+     "ct": "q0TU66MYogzhBt4iGe2SOKwGXlUllAdH8dgutb3bmjnr42xWJDBkBcVs5Rh10+HM"
+    },
+    "2026-11-21": {
+     "iv": "9lbAMEkTNOcs6cOM",
+     "ct": "6CdMnls5im92X+jShQiAZexO+BK+IBJfCIz210XWyc4uoDWe8L2/hJmH985m2a24"
+    },
+    "2026-11-20": {
+     "iv": "Z9FmbVEJQuUzYJX+",
+     "ct": "d/idvkn44bQTbGCDroO7Fc9+xUMsrInPeE+7VY0elu9DR6nw3MY4NF+XGSKv2kri"
+    },
+    "2026-11-19": {
+     "iv": "WSioYJ8y/1Up1e54",
+     "ct": "4fM5eZkkzcURotO7075YiQZkju1NWR3gIc9XFJq9YpkLnK+jCHxaG7Pulv4eXUO1"
+    },
+    "2026-11-18": {
+     "iv": "RCX9wB7+n5Yl3efG",
+     "ct": "EkcMz8lZLBIckAvUYHeh5KXLbDwAMtgZlpzznujlddxW8T7XyHU9vhSCbByS2gZX"
+    },
+    "2026-11-17": {
+     "iv": "y4ukmtDEJpW04z6s",
+     "ct": "Xpxu9E+CujatcN3v14IuromyDuGz0t0O9E7KZKNB8s3xKWmo/LaCl1TLcAsq8haK"
+    },
+    "2026-11-16": {
+     "iv": "LP9B2pUOqf6bS6wP",
+     "ct": "Rt/Ab/4lK2dSM1C0BjYCwwy98UqWDVCrLvTA73kKOjKHZPKoC6cZwBbLye+gdcap"
+    },
+    "2026-11-15": {
+     "iv": "sNrh0KLIDPiwiP/+",
+     "ct": "Ij9CeFDLiQQKhOPT7alpHSgD371o5uqrEWvsbKdemo5bQ53IHWEnCMjD+D2knDY1"
+    },
+    "2026-11-14": {
+     "iv": "gH+1G2xJnJ/2tigA",
+     "ct": "5nKyn9WsbCjJAAR2V5sKJX7jPHyDphqgAqpPkWhlNcS5twOyJFkbeTSDREmfXrwS"
+    },
+    "2026-11-13": {
+     "iv": "wfMGkwtJFblfZ/VP",
+     "ct": "+BThpVlBHB6wsfJJeKmxBvttj7ix2D2IAbJke7RbTuczL1uZoUK9lfbR4yAMN3iH"
+    },
+    "2026-11-12": {
+     "iv": "3GAYNFHRUsrIzdfX",
+     "ct": "z0I+TYdXM9OPwmFq6u5QjismlOV8BWqxafPTae4CFiBS452LRP3KNveHsK+hpifH"
+    },
+    "2026-11-11": {
+     "iv": "LHwQ1WhIG1hdXEvC",
+     "ct": "23D2DBLS03LJT9gVg5MPzSsS+GLVaOGDQob5Sex4z1cEhS0J1EeWO6pfjOxNrEIl"
+    },
+    "2026-11-10": {
+     "iv": "AzdNStEqRxOX7Hr9",
+     "ct": "8cmmDB9ig49SQG1yPwjVTn7A4x9qzyT0MRLnq2HAf5biGwOc1sOSYBbI2m56m5D0"
+    },
+    "2026-11-09": {
+     "iv": "cHQg8suWJMoSVSrS",
+     "ct": "FZXfbUObgAvnqQdBC4YTPYggfacYzlGb+Cs8ZSVpsOv1XmU8WymXYOlDkSxiFjGO"
+    },
+    "2026-11-08": {
+     "iv": "LFr6yNNsBhFqSKcS",
+     "ct": "CrEP6h7R0nR3YMt4xaehZu0oU44h1lMtdwCF7BS6opkUFqD5LQm3mxmXrlMIW0VP"
+    },
+    "2026-11-07": {
+     "iv": "feZ+JD/PdlxI6bNz",
+     "ct": "bN4YWTHBY/kUrWBxX+OVk9qjIktRkC7Xmh+cNv6jMgEhLz7JupiHQeVY3Su4vQUM"
+    },
+    "2026-11-06": {
+     "iv": "9qXJStUD+NzMf8Ec",
+     "ct": "6YrS8vCO23kjstsEdknwjDk3PQUZHG9n8u2zv5gHwVRf8TAuHai9bZen0HXi0Kxe"
+    },
+    "2026-11-05": {
+     "iv": "U9mGiuCzt0SeODm2",
+     "ct": "FkyD+HIw5ILK9JM44R6+LA1YY0WAtBEefrP3RoY4wzmV27+03ykacsS3IWaE9utP"
+    },
+    "2026-11-04": {
+     "iv": "Z0Uu6YKTuiEp35fz",
+     "ct": "nXsEr1WbOGj32hRkgxSFlLrEGuecizZaHcvZnv3mqzCURP35ROZWo5iOgj6tXxaP"
+    },
+    "2026-11-03": {
+     "iv": "l3b8RvlT50tbS7ym",
+     "ct": "CKY8NHFmy71GYijNBxRJsB+zxwdnE6oASMAcb6v+rZvey5x6VjgyhwF9cMFlqDl6"
+    },
+    "2026-11-02": {
+     "iv": "M8hEfUvA4OSzpPcJ",
+     "ct": "drt68EuQxBUzTes3jMnMAKLcHjv289qcX6+5Yy0Wuw2ocCKFQeT4MJH7Rbyw6h9S"
+    }
+   }
+  }
+ }
+}
