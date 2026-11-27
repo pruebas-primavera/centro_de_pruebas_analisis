@@ -1,0 +1,126 @@
+/* Soportes V-2.60 · Cambio de cierres (copia independiente de los estilos de Planta; no se comparte ningún archivo). */
+
+ background:#fffaf6;border:1px solid #efcdb8;border-radius:12px;box-shadow:0 8px 24px #0004;font:12px/1.35 Arial,Helvetica,sans-serif;color:#101b43;overflow:hidden}
+.pv256-head{cursor:move;touch-action:none;user-select:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:9px 34px 8px 12px;background:#101b43;color:#fff;position:relative}
+.pv256-head b{font-size:13px}
+.pv256-legend{display:flex;align-items:center;gap:4px;font-size:10px;color:#c9d2e3;width:100%}
+.pv256-legend i{display:inline-block;width:16px;height:0;border-top:4px solid;margin-left:6px;border-radius:2px}
+.pv256-legend i:first-child{margin-left:0}
+#pv256Close{position:absolute;right:6px;top:5px;width:24px;height:24px;border:0;background:none;color:#c9d2e3;font-size:18px;line-height:24px;cursor:pointer;min-width:0;padding:0}
+.pv256-tree{overflow:auto;padding:6px 6px 8px;flex:1 1 auto;min-height:60px}
+.pv256-sub{margin-left:14px}
+.pv256-row{display:flex;align-items:center;gap:6px;padding:5px 6px;border-radius:6px;cursor:pointer;user-select:none;outline:none}
+.pv256-row:hover,.pv256-row:focus-visible{background:#ffe7d4}
+.pv256-row.sel{box-shadow:inset 3px 0 0 #ff690b;background:#fff1e6}
+.pv256-row.vacio{cursor:default;color:#8a97a8}
+.pv256-row.vacio:hover{background:none}
+.pv256-arrow{width:12px;flex:0 0 12px;color:#5b6b80;font-size:11px;text-align:center}
+.pv256-chk{width:12px;height:12px;flex:0 0 12px;border:1.5px solid #9aa6b6;border-radius:3px;background:#fff}
+.pv256-row.prendido .pv256-chk{background:#ff690b;border-color:#ff690b;box-shadow:inset 0 0 0 2px #fff}
+.pv256-row.parcial .pv256-chk{background:linear-gradient(#ff690b,#ff690b) center/6px 6px no-repeat #fff;border-color:#ff690b}
+.pv256-txt{flex:1;min-width:0;overflow-wrap:anywhere}
+.pv256-row small{color:#5b6b80;font-size:10px}
+.pv256-row.cl .pv256-txt{font-weight:bold;font-size:12.5px}
+.pv256-vacio{color:#8a97a8;padding:8px;margin:0}
+.pv256-files{border-top:1px solid #efcdb8;padding:7px 10px 9px;flex:0 0 auto;max-height:34%;overflow:auto}
+.pv256-files ul{list-style:none;margin:5px 0 0;padding:0}
+.pv256-files li{display:flex;align-items:center;gap:6px;padding:3px 0}
+.pv256-files li span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.pv256-files li small{color:#5b6b80}
+.pv256-del{border:1px solid #f2b1a7;background:#fff;color:#b42318;border-radius:6px;padding:2px 8px;font-size:11px;cursor:pointer;min-width:0}
+.pv256-del:hover{background:#fdecea}
+.pv256-dialog div{display:flex;justify-content:flex-end;gap:8px}
+.pv256-dialog .si{background:#b42318;color:#fff;border-color:#b42318}
+.pv256-dialog{border:1px solid #efcdb8;border-radius:12px;padding:18px 20px 14px;max-width:420px;font:13px/1.45 Arial,sans-serif;color:#101b43;box-shadow:0 12px 32px #0005}
+.pv256-dialog::backdrop{background:#101b4355}
+.pv256-dialog h2{margin:0 0 8px;font-size:16px;border-left:4px solid #ff690b;padding-left:8px}
+.pv256-dialog p{margin:0 0 14px}
+.pv256-dialog button{border:1px solid #efcdb8;background:#fffaf6;border-radius:8px;padding:6px 14px;font-weight:bold;cursor:pointer}
+#pv256Close{cursor:pointer}
+.pv256-row.r-an{background:#fff1e6}.pv256-row.r-an .pv256-txt{font-weight:bold;font-size:13.5px}
+.pv256-row.r-mes .pv256-txt{font-weight:bold;letter-spacing:.3px}
+.pv256-row.gris,.pv256-row.vacio.r-mes{color:#8a97a8}.pv256-row.gris .pv256-chk{border-color:#c5ccd6}
+.pv257-kmz{border:1px solid #9db4e6;background:#eef4ff;color:#1e3a8a;border-radius:6px;font:bold 10px Arial,sans-serif;padding:2px 6px;margin-left:2px;white-space:nowrap;cursor:pointer;min-width:0}
+.pv257-kmz:hover{background:#dbe7ff}
+.pv257-acciones{display:flex;gap:6px;padding:8px 8px 10px;border-top:1px solid #efcdb8;flex:0 0 auto}
+.pv257-acciones button{flex:1;border:1px dashed #ff690b;background:#fff;color:#c64b00;border-radius:8px;padding:6px;font:bold 12px Arial,sans-serif;cursor:pointer;min-width:0}
+.pv257-acciones #pv257Borrar{flex:0 0 auto;border:1px solid #f2b1a7;color:#b42318;padding:6px 12px}
+.pv257-acciones button:hover:not(:disabled){background:#fff1e6}.pv257-acciones button:disabled{opacity:.45;cursor:not-allowed}
+.pv257-mes label{display:block;font-weight:bold;font-size:12px;margin:8px 0 4px}
+.pv257-mes select{display:block;width:100%;margin-top:4px;padding:6px;border:1px solid #efcdb8;border-radius:8px;font:13px Arial,sans-serif;background:#fff;color:#101b43}
+.pv257-nota{font-size:12px;color:#5b6b80;margin:8px 0 10px!important}
+.pv257-mes .ok,.pv257-borrar .si{background:#ff690b;color:#fff;border-color:#ff690b}
+.pv257-borrar .si{background:#b42318;border-color:#b42318}.pv257-borrar .si:disabled{opacity:.45;cursor:not-allowed}
+.pv257-borrar{width:380px;max-width:92vw}
+.pv257-arbol{max-height:min(420px,55vh);overflow:auto;border:1px solid #efcdb8;border-radius:10px;background:#fff;padding:6px;margin-bottom:10px}
+.pv257-arbol .pv256-chk{display:none}
+.pv257-arbol .pv256-row.borrar{background:#fde3df;color:#8f1d12}
+.pv257-arbol .pv256-row.borrar:hover{background:#fbd0c9}
+.pv257-resumen{font-weight:bold;color:#8f1d12;margin:0 0 12px!important}
+.pv256-row.r-arch{color:#5b6b80}.pv257-ico{font-size:11px}
+.pv256-row.r-file .pv256-txt{font-weight:600}
+.pv257-borrar .pv257-arbol .pv256-sub{display:block;margin-left:14px}
+.pv257-borrar .pv257-arbol .pv256-row{display:flex;justify-content:flex-start;gap:6px}
+.pv257-borrar .pv257-arbol{display:block}
+/* Planta Externa V-2.58 · Cambio de cierres (reusa los estilos de filas/árbol de Mtto Preventivo). */
+#cs260Panel{position:fixed;top:12px;left:12px;z-index:1201;width:310px;max-height:calc(100vh - 24px);display:flex;flex-direction:column;
+ background:#fffaf6;border:1px solid #efcdb8;border-radius:12px;box-shadow:0 8px 24px #0004;font:12px/1.35 Arial,Helvetica,sans-serif;color:#101b43;overflow:hidden}
+#cs260Panel[hidden]{display:none}
+#cs260Panel.moviendo{box-shadow:0 14px 36px #0006;opacity:.97}
+#cs260Panel .pv256-head{background:#0f3d2e}
+#cs260Close{position:absolute;right:6px;top:5px;width:24px;height:24px;border:0;background:none;color:#c9d2e3;font-size:18px;line-height:24px;cursor:pointer;min-width:0;padding:0}
+.cs260-ico{background:none;border:0}
+.cs260-rombo{display:inline-block;width:10px;height:10px;transform:rotate(45deg);border:2px solid #fff;box-shadow:0 0 0 1px #0b1430,0 1px 4px #0008;margin:3px}
+.cs260-rombo.cambiado{background:#22c55e}.cs260-rombo.nocambio{background:#1e5bff}
+.cs260-rombo.sel{box-shadow:0 0 0 2px #ff690b,0 0 8px 2px #ff690b}
+.pv256-legend .cs260-rombo{width:7px;height:7px;border-width:1px;margin:0 3px 0 8px;vertical-align:middle}
+.pv256-legend .cs260-rombo:first-child{margin-left:2px}
+.cs260-coto-lg{display:inline-block;width:14px;height:9px;background:#00ffff80;border:2px solid #ffd400;margin:0 3px 0 8px;vertical-align:middle;border-top-width:2px}
+.pv256-row.cs260-cierre::after{content:'';width:8px;height:8px;flex:0 0 8px;transform:rotate(45deg);border:1px solid #fff;box-shadow:0 0 0 1px #0b1430;margin-right:3px}
+.pv256-row.cz-cambiado::after{background:#22c55e}.pv256-row.cz-nocambio::after{background:#1e5bff}
+.pv256-row.cs260-coto::after{content:'';width:13px;height:8px;flex:0 0 13px;background:#00ffff80;border:2px solid #ffd400}
+.cs260-tip{font:bold 11px Arial,sans-serif}
+.cs260-pop{font:12px/1.4 Arial,sans-serif;color:#101b43;min-width:190px}
+.cs260-pop b{display:block;font-size:14px}.cs260-pop span{display:block;color:#5b6b80}
+.cs260-pop .t{display:inline-block;margin:4px 0;padding:1px 8px;border-radius:9px;color:#fff;font-weight:bold;font-size:11px}
+.cs260-pop .t.cambiado{background:#16a34a}.cs260-pop .t.nocambio{background:#1e5bff}
+.cs260-pop em{display:block;margin-top:2px;font-style:normal;background:#eef4ff;border-radius:5px;padding:3px 6px}
+.cs260-pop pre{white-space:pre-wrap;font:11px/1.35 Arial,sans-serif;background:#fff7ef;border-radius:5px;padding:4px 6px;margin:6px 0 0;max-height:140px;overflow:auto}
+.cs260-load.busy{opacity:.6;pointer-events:none}
+.cs260-rombo.mixto{background:linear-gradient(90deg,#22c55e 50%,#1e5bff 50%)}
+/* (sin position: Leaflet lo coloca con position:absolute) */
+.cs260-num{position:absolute;left:11px;top:-9px;min-width:15px;height:15px;padding:0 3px;border-radius:8px;background:#101b43;color:#fff;font:bold 10px/15px Arial,sans-serif;text-align:center;border:1.5px solid #fff;box-shadow:0 1px 3px #0007;pointer-events:none}
+.cs260-pop .cs260-varios{margin:0 0 6px;font-weight:bold;color:#c64b00}
+.cs260-pop hr{border:0;border-top:1px solid #eee;margin:6px 0}
+/* Cierre como círculo (pedido de Carlos) */
+.cs260-rombo{transform:none;border-radius:50%;width:12px;height:12px}
+.pv256-legend .cs260-rombo{width:8px;height:8px}
+.pv256-row.cs260-cierre::after{transform:none;border-radius:50%;width:9px;height:9px;flex-basis:9px}
+.pv256-legend i.cs260-rombo{height:8px;width:8px;border:1px solid #fff;border-radius:50%}
+/* Cierre como triángulo (pedido de Carlos, escala 1.0 de Google Earth) */
+.cs260-tri{display:block;filter:drop-shadow(0 1px 2px #0009)}
+.cs260-tri.sel{filter:drop-shadow(0 0 3px #ff690b) drop-shadow(0 0 3px #ff690b)}
+.cs260-num{left:17px;top:-8px}
+.pv256-legend i.cs260-rombo,.pv256-row.cs260-cierre::after{border:0!important;border-radius:0!important;box-shadow:none!important;clip-path:polygon(50% 0,100% 100%,0 100%);width:10px!important;height:9px!important;flex:0 0 10px}
+.pv256-legend i.cs260-rombo.cambiado{background:#22c55e}.pv256-legend i.cs260-rombo.nocambio{background:#1e5bff}
+/* "Ver cierres cambiados" debajo de "Ver Preventivo", dentro de la misma tarjeta */
+/* Etiqueta discreta "Cierre_N" (visible desde zoom 19, el máximo acercamiento) */
+.cs260-lbl{position:absolute;left:25px;top:6px;white-space:nowrap;font:600 10px/1 Arial,sans-serif;color:#fff;opacity:.92;letter-spacing:.2px;pointer-events:none;
+ text-shadow:0 0 2px #0b1430,0 0 2px #0b1430,0 1px 2px #0b1430}
+.cs260-ico:has(.cs260-num) .cs260-lbl{left:33px}
+.cs260-sin-etiqueta .cs260-lbl{display:none}
+/* Botón y tarjeta en el tablero de Soportes */
+#cs260Load.btn::before{content:"";display:inline-block;width:18px;height:18px;flex:none;vertical-align:middle;margin-right:6px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314254d' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 3 22 20H2z'/%3E%3Cpath d='M12 10v4M12 17v.5'/%3E%3C/svg%3E")}
+#supportModule #sc99-kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:650px){#supportModule #sc99-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs260-kpi{cursor:pointer;outline-offset:3px}
+#supportModule .cs260-kpi:hover{box-shadow:inset 0 0 0 1px #e89c68}
+#supportModule .cs260-kpi[aria-expanded="true"]{background:#f9dfcb;border-color:#e58545;box-shadow:inset 0 2px 5px #99562118}
+.cs260-kpi:focus-visible{outline:2px solid #ff690b}
+/* Título del panel siempre blanco (Soportes tiene estilos propios para <b>) */
+#cs260Panel .pv256-head b{color:#fff;font:bold 13px Arial,Helvetica,sans-serif}
+#cs260Panel{font-size:12px}
+/* Laptop (≤ 1450 px): el botón va en dos renglones para que la fila de botones de Soportes no se salga de la pantalla */
+@media (max-width:1450px){#cs260Load.btn{max-width:122px;padding-top:4px;padding-bottom:4px}#cs260Load .cs260-txt{white-space:normal;line-height:1.1;text-align:left;min-width:0}}
+#cs260Panel .pv256-head{padding:9px 34px 8px 12px!important;margin:0}
+#cs260Panel .pv256-legend{color:#c9d2e3}
