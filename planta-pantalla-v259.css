@@ -1,0 +1,8 @@
+/* Planta Externa V-2.59 · Pantalla completa del mapa */
+.pe259-ctl{margin:10px 10px 0 0!important}
+.pe259-btn{display:inline-flex;align-items:center;gap:6px;background:#fffaf6;color:#101b43;border:1px solid #efcdb8;border-radius:10px;padding:7px 12px;font:bold 13px Arial,Helvetica,sans-serif;box-shadow:0 2px 8px #0003;cursor:pointer;min-width:0}
+.pe259-btn:hover{background:#fff1e6}
+.pe259-btn span{font-size:14px;line-height:1}
+.pe259-btn[aria-pressed=true]{background:#101b43;color:#fff;border-color:#101b43}
+body.pe259-full #map{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-height:none!important;z-index:1100!important;border-radius:0!important;margin:0!important}
+body.pe259-full{overflow:hidden}
